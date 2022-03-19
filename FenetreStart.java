@@ -12,8 +12,7 @@ public class FenetreStart extends JFrame implements ActionListener{
 	//<!bouton start
 	private JButton start1;
 	
-	//<!bouton permettant de couper le son
-	private JButton Son;
+
 	
 	
 	
