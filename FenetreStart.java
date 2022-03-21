@@ -12,13 +12,10 @@ public class FenetreStart extends JFrame implements ActionListener{
 	//<!bouton start
 	private JButton start1;
 	
+	
+	
+    //FenetreStart() : constructeur FenetreStart
 
-	
-	
-	
-	/**
-   * \fn FenetreStart() : constructeur FenetreStart
-   */ 
 	public FenetreStart(){
 		
 		//initialisation de la fenêtre
@@ -31,12 +28,11 @@ public class FenetreStart extends JFrame implements ActionListener{
 		
 		//création des éléments de la page d'accueil
 		
-		
 		start1= new JButton("START");
 		start1.setBounds(450,800,300,100);
 		start1.setBackground(new Color(249,200,0));
 		start1.setFont(new Font("Agency FB",Font.BOLD,50));
-		start1.setForeground(new Color(52,62,162));
+		start1.setForeground(new Color(52,62,162));  //changer couleur
 		start1.addActionListener(this);
 		
 		JLabel ombre = new JLabel();
@@ -46,7 +42,7 @@ public class FenetreStart extends JFrame implements ActionListener{
 		ombre.setText("Poisson");
 		ombre.setFont(new Font("Agency FB",Font.BOLD,180));
 		ombre.setForeground(Color.black);
-		ombre.setBackground(new Color(200,62,162));
+		ombre.setBackground(new Color(200,62,162));  //changer couleur
 		
 		JLabel txt = new JLabel();
 		txt.setLayout(null);
@@ -54,12 +50,12 @@ public class FenetreStart extends JFrame implements ActionListener{
 		txt.setLocation(100,0);
 		txt.setText("Poisson");
 		txt.setFont(new Font("Agency FB",Font.BOLD,180));
-		txt.setForeground(new Color(249,200,93));
+		txt.setForeground(new Color(249,200,93));  //changer couleur
 		txt.setBackground(new Color(52,62,162));
 		
 		String T = readFile("texte/debut.txt");
         JTextArea Texte = new JTextArea(T);
-        Texte.setBackground(new Color(52,0,0));
+        Texte.setBackground(new Color(52,0,0)); //changer couleur
         Texte.setForeground(Color.white);
         Texte.setBounds(50,200,1200,600);
         Texte.setFont(new Font("Agency FB",Font.BOLD,25));
@@ -69,7 +65,7 @@ public class FenetreStart extends JFrame implements ActionListener{
         JPanel panneauGlobal = new JPanel();
 		panneauGlobal.setLayout(null);
 		panneauGlobal.setBounds(0,0,1000,1000);
-		panneauGlobal.setBackground(new Color(52,62,50));
+		panneauGlobal.setBackground(new Color(52,62,50)); //changer couleur
 		panneauGlobal.add(start1);
 		panneauGlobal.add(txt);
 		panneauGlobal.add(Texte);
