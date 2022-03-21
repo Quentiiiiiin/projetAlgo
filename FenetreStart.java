@@ -9,9 +9,8 @@ import java.io.*; //images
 
 public class FenetreStart extends JFrame implements ActionListener{
 	
-	//<!bouton start
+	//bouton start
 	private JButton start1;
-	
 	
 	
     //FenetreStart() : constructeur FenetreStart
@@ -20,7 +19,7 @@ public class FenetreStart extends JFrame implements ActionListener{
 		
 		//initialisation de la fenêtre
 		
-		this.setTitle("Poisson: le jeu");
+		this.setTitle("Nemo: le jeu");
 		this.setSize(1200,1000);
 		this.setLocation(400,20);
 		this.setResizable(false);
@@ -30,33 +29,33 @@ public class FenetreStart extends JFrame implements ActionListener{
 		
 		start1= new JButton("START");
 		start1.setBounds(450,800,300,100);
-		start1.setBackground(new Color(249,200,0));
+		start1.setBackground(new Color(206,206,206));
 		start1.setFont(new Font("Agency FB",Font.BOLD,50));
-		start1.setForeground(new Color(52,62,162));  //changer couleur
+		start1.setForeground(new Color(0,0,255));  
 		start1.addActionListener(this);
 		
 		JLabel ombre = new JLabel();
 		ombre.setLayout(null);
 		ombre.setSize(1200,200);
 		ombre.setLocation(106,0);
-		ombre.setText("Poisson");
+		ombre.setText("Le Jeu Nemo");
 		ombre.setFont(new Font("Agency FB",Font.BOLD,180));
 		ombre.setForeground(Color.black);
-		ombre.setBackground(new Color(200,62,162));  //changer couleur
+		ombre.setBackground(new Color(0,0,255));  
 		
 		JLabel txt = new JLabel();
 		txt.setLayout(null);
 		txt.setSize(1200,200);
 		txt.setLocation(100,0);
-		txt.setText("Poisson");
+		txt.setText("Le Jeu Nemo");
 		txt.setFont(new Font("Agency FB",Font.BOLD,180));
-		txt.setForeground(new Color(249,200,93));  //changer couleur
-		txt.setBackground(new Color(52,62,162));
+		txt.setForeground(new Color(0,0,255));  
+		txt.setBackground(new Color(0,0,0)); 
 		
-		String T = readFile("texte/debut.txt");
+		String T = readFile("debut.txt");
         JTextArea Texte = new JTextArea(T);
-        Texte.setBackground(new Color(52,0,0)); //changer couleur
-        Texte.setForeground(Color.white);
+        Texte.setBackground(new Color(0,127,255)); 
+        Texte.setForeground(new Color(206,206,206));
         Texte.setBounds(50,200,1200,600);
         Texte.setFont(new Font("Agency FB",Font.BOLD,25));
         Texte.setEditable(false);
@@ -65,7 +64,7 @@ public class FenetreStart extends JFrame implements ActionListener{
         JPanel panneauGlobal = new JPanel();
 		panneauGlobal.setLayout(null);
 		panneauGlobal.setBounds(0,0,1000,1000);
-		panneauGlobal.setBackground(new Color(52,62,50)); //changer couleur
+		panneauGlobal.setBackground(new Color(0,127,255)); 
 		panneauGlobal.add(start1);
 		panneauGlobal.add(txt);
 		panneauGlobal.add(Texte);
@@ -79,15 +78,17 @@ public class FenetreStart extends JFrame implements ActionListener{
 	
 	/**
    * \fn void actionPerformed(ActionEvent e) : méthode permettant de lancer le jeu si
-   * l'utilisateur appuie sur start ou de couper le son si il appuie sur le bouton correspondant
+   * l'utilisateur appuie sur start
    * 
    * @param ActionEvent e : événement associé
    */ 
 	 public void actionPerformed (ActionEvent e){
 		 
-		 if(e.getSource()==start1){ //lancement du jeu
-			 
-		}
+		if(e.getSource()==start1){ //lancement du jeu
+			
+			   setVisible(false); //fermeture de la fenêtre start
+			   //new FenetreChoix(audioOn); //création de la fenêtre choix
+	   }
 	 }
 	 
 	/**
@@ -113,7 +114,7 @@ public class FenetreStart extends JFrame implements ActionListener{
             System.out.println(e.toString());
        }
        return null;
-    } 
+    }
 	
 	
 }
