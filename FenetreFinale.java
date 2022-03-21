@@ -8,13 +8,14 @@ import java.io.*; //image
  */
 public class FenetreFinale extends JFrame implements MouseListener, ActionListener{
 	
-	//<!fenêtre principale de jeu
+	//fenêtre principale de jeu
+
 	//private FenetreJeu fenetre;
 	
-	//<!zone où seront affichées les infos sur les poissons
+	//zone où seront affichées les infos sur les poissons
 	private JLabel Info;
 	
-	//<!bouton restart
+	//bouton restart
 	private JButton Restart;
 	
 	/**
@@ -27,7 +28,7 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
 		//initialisation de la fenêtre
 		
 		//fenetre=f;
-        this.setTitle("Att\u00e9rissage sur Mars");
+        this.setTitle("Le poisson est sauvé");
 		this.setSize(1000,1000);
 		this.setLocation(400,20);
 		this.setResizable(false);
@@ -38,7 +39,7 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
         JPanel Fond = new JPanel();
         Fond.setLayout(null);
         Fond.setBounds(0,0,1000,1000);
-        Fond.setBackground(new Color(52,62,162)); //changer couleur 
+        Fond.setBackground(new Color(0,127,255));
         
         JLabel Gif = new JLabel();
         Gif.setBounds(0,0,1000,1000);
@@ -55,7 +56,7 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
         
         Info = new JLabel("+ D'INFOS");
         Info.setBounds(700,520,150,50);
-        Info.setBackground(new Color(52,62,162)); //changer couleur 
+        Info.setBackground(new Color(0,127,255)); //changer couleur 
         Info.setForeground(new Color(249,200,93)); //changer couleur 
         Info.setFont(new Font("Agency FB",Font.BOLD,35));
         Info.addMouseListener(this);
@@ -64,7 +65,7 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
         Restart = new JButton("Restart");
         Restart.setBounds(730,30,200,75);
         Restart.setFont(new Font("Agency FB",Font.BOLD,35));
-        Restart.setForeground(new Color(52,62,162)); //changer couleur 
+        Restart.setForeground(new Color(0,127,255)); 
         Restart.setBackground(new Color(249,200,93)); //changer couleur 
         Gif.add(Restart);
         
@@ -77,7 +78,7 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
         String T = readFile("description.txt");
         JTextArea Texte = new JTextArea(T);
         Texte.setBackground(new Color(249,200,93)); //changer couleur 
-        Texte.setForeground(new Color(52,62,162)); //changer couleur 
+        Texte.setForeground(new Color(0,127,255)); //changer couleur 
         Texte.setBounds(45,610,900,330);
         Texte.setFont(new Font("Agency FB",Font.BOLD,30));
         Texte.setEditable(false);
@@ -106,7 +107,7 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
     }
     
     /**
-   * \fn void actionPerformed(ActionEvent e) : méthode permettant de gérer l'arrêt/la lecture du son et le recommencement du jeu en fonction de l'appui de l'utilisateur sur les boutons
+   * \fn void actionPerformed(ActionEvent e) : méthode permettant de gérer le recommencement du jeu en fonction si il y a appui de l'utilisateur sur le bouton Restart
    * 
    * @param ActionEvent e : événement associé
    */ 
