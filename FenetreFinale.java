@@ -43,21 +43,18 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
         
         JLabel Gif = new JLabel();
         Gif.setBounds(0,0,1000,1000);
-        Gif.setBackground(new Color(52,62,162)); //changer couleur 
+        Gif.setBackground(new Color(0,0,162)); 
         Fond.add(Gif);
         
-        JLabel I1 = new JLabel(new ImageIcon("images/photo_mars.png"));
-        I1.setBounds(50,50,600,500);
+        JLabel I1 = new JLabel(new ImageIcon("Nemo.jpg"));
+        I1.setBounds(40,40,640,510);
         Gif.add(I1);
         
-        JLabel I2 = new JLabel(new ImageIcon("images/mars.gif"));
-        I2.setBounds(580,50,500,500);
-        Gif.add(I2);
         
         Info = new JLabel("+ D'INFOS");
         Info.setBounds(700,520,150,50);
-        Info.setBackground(new Color(0,127,255)); //changer couleur 
-        Info.setForeground(new Color(249,200,93)); //changer couleur 
+        Info.setBackground(new Color(0,127,255));  
+        Info.setForeground(new Color(206,206,206));  
         Info.setFont(new Font("Agency FB",Font.BOLD,35));
         Info.addMouseListener(this);
         Gif.add(Info);
@@ -66,19 +63,13 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
         Restart.setBounds(730,30,200,75);
         Restart.setFont(new Font("Agency FB",Font.BOLD,35));
         Restart.setForeground(new Color(0,127,255)); 
-        Restart.setBackground(new Color(249,200,93)); //changer couleur 
+        Restart.setBackground(new Color(206,206,206)); 
         Gif.add(Restart);
-        
-        JPanel cadreJaune = new JPanel();
-        cadreJaune.setLayout(null);
-        cadreJaune.setBounds(40,40,620,520);
-        cadreJaune.setBackground(new Color(249,200,93)); //changer couleur 
-        Gif.add(cadreJaune);
-        
+       
         String T = readFile("description.txt");
         JTextArea Texte = new JTextArea(T);
-        Texte.setBackground(new Color(249,200,93)); //changer couleur 
-        Texte.setForeground(new Color(0,127,255)); //changer couleur 
+        Texte.setBackground(new Color(206,206,206)); 
+        Texte.setForeground(new Color(0,127,255));  
         Texte.setBounds(45,610,900,330);
         Texte.setFont(new Font("Agency FB",Font.BOLD,30));
         Texte.setEditable(false);
@@ -88,14 +79,14 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
         JPanel fondTexte2 = new JPanel();
         fondTexte2.setLayout(null);
         fondTexte2.setBounds(45,610,900,330);
-        fondTexte2.setBackground(new Color(249,200,93)); //changer couleur 
+        fondTexte2.setBackground(new Color(206,206,206));
         Gif.add(fondTexte2);
         
         
         JPanel fondTexte = new JPanel();
         fondTexte.setLayout(null);
         fondTexte.setBounds(35,600,920,350);
-        fondTexte.setBackground(new Color(249,200,93)); //changer couleur 
+        fondTexte.setBackground(new Color(206,206,206)); 
         Gif.add(fondTexte);
         
         
