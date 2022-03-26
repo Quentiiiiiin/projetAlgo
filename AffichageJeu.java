@@ -27,7 +27,7 @@ public class AffichageJeu extends JPanel{
 	//<!tableau contenant les objets du niveau 5
 	private ElementMarin[] o5 = new ElementMarin[6];
 	
-	//<!booléen permettant de savoir si un carburant a été touché dans le niveau en cours
+	//<!booléen permettant de savoir si une Nourriture a été touché dans le niveau en cours
 	boolean toucherNourriture=false;
 	
 	//<!booléen gérant l'affichage ou non de la nourriture 
@@ -55,7 +55,7 @@ public class AffichageJeu extends JPanel{
 		
 		o1[1] = new Requin(f);
 		o2[1] = new Requin(f);
-		o3[1] = new Requins(f);
+		o3[1] = new Requin(f);
 		o4[1] = new Requin(f);
 		o5[1] = new Requin(f);
 		o1[2] = new Requin(f);
@@ -63,13 +63,12 @@ public class AffichageJeu extends JPanel{
 		o3[2] = new Requin(f);
 		o4[2] = new Requin(f);
 		o5[2] = new Requin(f);
-        o5[5] = new Requin(f);
         o3[3] = new Requin(f);
         o4[3] = new Requin(f);
         o4[4] = new Requin(f);
         o5[3] = new Requin(f);
         o5[4] = new Requin(f);
-		
+		o5[5] = new Requin(f);
 	}
 	
 	/**
@@ -83,15 +82,15 @@ public class AffichageJeu extends JPanel{
 		//dessin de l'image du poisson, de la plateforme et du fond
 		
 		g.drawImage(fondMarin,0,0,(int)(20.0/27.0*1500),(int)(5.0/6.0*1000),null);
-		g.setColor(new Color(249,200,93)); //changer couleur 
+		g.setColor(new Color(0,127,255));
 		g.fillRect((int)(3.5/5.0*f.largeurJeu),(int)(4.5/5.0*f.hauteurJeu),(int)(1.5/5.0*f.largeurJeu),(int)(0.2/5.0*f.hauteurJeu));
 		g.drawImage(f.Nemo.image,(int)(f.Nemo.origine.x),(int)(f.Nemo.origine.y),f.Nemo.largeur,f.Nemo.hauteur,null);
 		
 		if(!f.enJeu){ //si l'utilisateur n'est pas en jeu
 		
-		//dessin des points donnant à l'utilisateur une idée de la courbe suivie par le rover (cette courbe ne prend pas le vent en compte volontairement)
+		//dessin des points donnant à l'utilisateur une idée de la courbe suivie par le poisson (cette courbe ne prend pas le courant en compte volontairement)
 		
-			g.setColor(new Color(249,200,93));
+			g.setColor(new Color(0,127,255));
 			for(int i=0;i<10;i++){
 				g.drawOval((int)(f.vI*Math.cos(Math.toRadians(f.aI))*(i+1)+f.Nemo.largeur),
 				(int)(f.gravite*Math.pow(i+1,2)-f.vI*Math.sin(Math.toRadians(f.aI))*(i+1)+833-f.Nemo.hauteur),
@@ -104,10 +103,10 @@ public class AffichageJeu extends JPanel{
 			o1[0].origine = new APoint(500.0,550.0);
 			o1[1].origine = new APoint(200.0,300.0);
 			o1[2].origine = new APoint(800.0,200.0);
+
 			for(int i=0;i<o1.length;i++){
-				
-				//dessin des objets célestes
-				if(o1[i] instanceof Carburant){ //si l'objet est un carburant
+				//dessin des ElementMarins
+				if(o1[i] instanceof Nourriture){ //si l'objet est une Nourriture
 					if(affiche){ //il vaut vérifier si on l'affiche ou non
 						g.drawImage(o1[i].image,(int)(o1[i].origine.x),(int)(o1[i].origine.y),100,100,null);
 					}
@@ -120,8 +119,9 @@ public class AffichageJeu extends JPanel{
 			o2[0].origine = new APoint(400.0,300.0);
 			o2[1].origine = new APoint(300.0,550.0);
 			o2[2].origine = new APoint(600.0,500.0);
+
 			for(int i=0;i<o2.length;i++){
-				if(o2[i] instanceof Carburant){
+				if(o2[i] instanceof Nourriture){
 					if(affiche){ 
 						g.drawImage(o2[i].image,(int)(o2[i].origine.x),(int)(o2[i].origine.y),100,100,null);
 					}
@@ -131,12 +131,12 @@ public class AffichageJeu extends JPanel{
 			}
 			toucheElementMarin(o2);
 		}else if(f.numNiveau==3){
-			o3[0].origine = new APoint(500.0,300.0); //carburant
-			o3[1].origine = new APoint(300.0,350.0); //météorite 
-			o3[2].origine = new APoint(450.0,600.0); //trou noir
-            o3[3].origine = new APoint(700.0,100.0); //météorite 
+			o3[0].origine = new APoint(500.0,300.0);
+			o3[1].origine = new APoint(300.0,350.0);
+			o3[2].origine = new APoint(450.0,600.0);
+            o3[3].origine = new APoint(700.0,100.0);
 			for(int i=0;i<o3.length;i++){
-				if(o3[i] instanceof Carburant){
+				if(o3[i] instanceof Nourriture){
 					if(affiche){ 
 						g.drawImage(o3[i].image,(int)(o3[i].origine.x),(int)(o3[i].origine.y),100,100,null);
 					}
@@ -146,13 +146,13 @@ public class AffichageJeu extends JPanel{
 			}
 			toucheElementMarin(o3);
 		}else if(f.numNiveau==4){
-			o4[0].origine = new APoint(450.0,400.0); //carburant
-			o4[1].origine = new APoint(350.0,200.0); //météorite
-			o4[2].origine = new APoint(600.0,350.0); //trou noir
-            o4[3].origine = new APoint(800.0,500.0); //meteorite
-            o4[4].origine = new APoint(350.0,600.0); //météorite
+			o4[0].origine = new APoint(450.0,400.0);
+			o4[1].origine = new APoint(350.0,200.0);
+			o4[2].origine = new APoint(600.0,350.0);
+            o4[3].origine = new APoint(800.0,500.0);
+            o4[4].origine = new APoint(350.0,600.0);
 			for(int i=0;i<o4.length;i++){
-				if(o4[i] instanceof Carburant){
+				if(o4[i] instanceof Nourriture){
 					if(affiche){ 
 						g.drawImage(o4[i].image,(int)(o4[i].origine.x),(int)(o4[i].origine.y),100,100,null);
 					}
@@ -162,14 +162,14 @@ public class AffichageJeu extends JPanel{
 			}
 			toucheElementMarin(o4);
 		}else if(f.numNiveau==5){
-			o5[0].origine = new APoint(600.0,325.0); //carburant
-			o5[1].origine = new APoint(300.0,650.0); //meteorite
-			o5[2].origine = new APoint(100.0,350.0); //trou noir
-            o5[3].origine = new APoint(450.0,500.0); //meteorite
-            o5[4].origine = new APoint(500.0,125.0); //meteorite
-            o5[5].origine = new APoint(875.0,450.0); //trou noir
+			o5[0].origine = new APoint(600.0,325.0);
+			o5[1].origine = new APoint(300.0,650.0);
+			o5[2].origine = new APoint(100.0,350.0);
+            o5[3].origine = new APoint(450.0,500.0);
+            o5[4].origine = new APoint(500.0,125.0);
+            o5[5].origine = new APoint(875.0,450.0);
 			for(int i=0;i<o5.length;i++){
-				if(o5[i] instanceof Carburant){
+				if(o5[i] instanceof Nourriture){
 					if(affiche){ 
 						g.drawImage(o5[i].image,(int)(o5[i].origine.x),(int)(o5[i].origine.y),100,100,null);
 					}
@@ -182,7 +182,7 @@ public class AffichageJeu extends JPanel{
 	}
 	
 	/**
-   * \fn void toucheElementMarin(ElementMarin[] o) : méthode gérant le contact entre le rover et un objet céleste
+   * \fn void toucheElementMarin(ElementMarin[] o) : méthode gérant le contact entre le poisson et un élément marin
    * 
    * @param ElementMarin[] o : tableau contenant les objets marins du niveau en cours
    */ 
@@ -190,7 +190,7 @@ public class AffichageJeu extends JPanel{
         
         		for(int i=0;i<o.length;i++){
 				
-				//si le rover touche l'objet céleste i
+				//si le poisson touche l'élément marin i
 				
 				if(
 				//coin en haut à gauche
@@ -207,7 +207,7 @@ public class AffichageJeu extends JPanel{
 				(int)(f.Nemo.origine.y+f.Nemo.hauteur-30)>=(int)(o[i].origine.y) && (int)(f.Nemo.origine.y+f.Nemo.hauteur-30)<=(int)(o[i].origine.y)+100)){
 					
 					//on lance la méthode action de cet objet, 1 seule fois par objet
-					if(o[i] instanceof Carburant){
+					if(o[i] instanceof Nourriture){
 						if(toucherNourriture==false){
 							o[i].action();
 							toucherNourriture=true;
