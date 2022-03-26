@@ -43,7 +43,8 @@ public class Poisson{
    */ 
 	public void ChangePosition(int courant, int vitesseI, int angleI, double t, double viscosite){//méthode effectuant le changement de la position du rover en fonction du temps et des paramètres du niveau en cours
 				
-		origine.x = 0.25*vent*Math.pow(t,2)+vitesseI*Math.cos(Math.toRadians(angleI))*t;
-		origine.y = g*Math.pow(t,2)-vitesseI*Math.sin(Math.toRadians(angleI))*t+833-hauteur;
+        origine.x = viscosite*Courantx*Math.pow(t,2) + vitesseI * Math.cos (Math.toRadians(angleI)) + 0;
+        origine.y = viscosite*Couranty*Math.pow(t,2) - vitesseI * Math.sin (Math.toRadians(angleI)) + 0;
+        
 	}	
 }
