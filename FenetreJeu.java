@@ -9,8 +9,8 @@ import java.io.*; //images
  */ 
 public class FenetreJeu extends JFrame implements ActionListener, ChangeListener{
 	
-	//<!barre de jauge du carburant
-	private JProgressBar currentCarbu;
+	//<!barre de jauge du nourriture
+	private JProgressBar currentNourriture;
 	 
 	//<!bouton start
 	private JButton Start; 
@@ -21,8 +21,8 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 	//<!zone d'affichage du titre du jeu
 	private JLabel Titre;
 	
-	//<!rover qui est l'objet dirigé par l'utilisateur
-	Rover Perseverance;
+	//<!Poisson qui est l'objet dirigé par l'utilisateur
+	Poisson Nemo;
 	
 	//<!objet responsable de la partie graphique du jeu
 	AffichageJeu AffJeu; 
@@ -33,16 +33,16 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 	//<!plateforme d'arrivée
 	private JPanel Plateforme;
 	
-	//<!curseur de défilement permettant de régler la vitesse initiale du rover
+	//<!curseur de défilement permettant de régler la vitesse initiale du poisson
 	private JSlider Vitesse;
 	
-	//<!curseur de défilement permettant de régler l'angle initial du rover
+	//<!curseur de défilement permettant de régler l'angle initial du poisson
 	private JSlider Angle;
 	
-	//<!zone d'affichage de la vitesse initiale du rover
+	//<!zone d'affichage de la vitesse initiale du poisson
 	private JLabel VitesseI;
 	
-	//<!zone d'affichage de l'angle initial du rover
+	//<!zone d'affichage de l'angle initial du poisson
 	private JLabel AngleI;
 	
 	//<!zone d'affichage du vent présent sur le niveau
@@ -51,26 +51,23 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 	//<!zone d'affichage de la gravité présente sur le niveau
     private JLabel Gravite;
     
-    //<!zone d'affichage pourcentage carburant restant
-	private JLabel Carbu;
+    //<!zone d'affichage pourcentage nourriture restant
+	private JLabel Nourri;
 	 
 	//<!bouton permettant d'afficher les règles du jeu, disponibles durant toute la partie
 	private JButton Aide; 
-	
-	//<!bouton permettant de couper le son
-	private JButton Son;
-	
-	//<!vitesse initiale du rover
+
+	//<!vitesse initiale du poisson
 	int vI;
 	
-	//<!angle initial du rover
+	//<!angle initial du poisson
 	int aI;
 	
 	//<!vent présent sur le niveau en cours
 	private int v;
 	
-	//<!pourcentage de carburant restant au rover
-	double pCarbu=100.0;
+	//<!pourcentage de nourriture restant au poisson
+	double pNourriture=100.0;
 	
 	//<!gravité présente sur le niveau en cours
 	double gravite;
@@ -78,43 +75,35 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 	//<!numéro du niveau en cours
 	int numNiveau;
 	
-	//<!niveau aléatoire auquel envoie un trou noir au contact du rover
+	//<!niveau aléatoire auquel envoie un trou noir au contact du poisson
 	int newNumNiveau;
 	
-	//<!largeur de la zone de jeu dans laquelle évolue le rover
+	//<!largeur de la zone de jeu dans laquelle évolue le poisson
 	int largeurJeu;
 	
-	//<!hauteur de la zone de jeu dans laquelle évolue le rover
+	//<!hauteur de la zone de jeu dans laquelle évolue le poisson
 	int hauteurJeu;
 	
 	//<!booléen permettant de savoir si un niveau est en cours de jeu ou non
 	boolean enJeu=false;
 	
-	//<!booléen permettant de savoir si le rover a touché une météorite
-	boolean toucheMeteorite=false; 
-	
-	//<!booléen permettant de savoir si le rover a touché un trou noir
-	boolean toucheTrouNoir=false;
-	
-	//<!booléen permettant de savoir si le son est activé ou non
-	boolean audioOn;
-	
+	//<!booléen permettant de savoir si le poisson a touché une météorite
+	boolean toucheRequin=false; 
+
 	//<!timer gérant l'évolution du jeu et servant de base temporelle
 	private Timer mt;
 	
 	//<!variable permettant de compter le temps qui passe
 	private double temps;
 	
-	
 	/**
-   * \fn FenetreJeu(Rover r, boolean b) : constructeur FenetreJeu
+   * \fn FenetreJeu(poisson r, boolean b) : constructeur FenetreJeu
    * 
    * @param boolean b : booléen indiquant si le son était allumé ou non dans la fenêtre start
-   * @param Rover r : rover avec lequel l'utilisateur a choisi de jouer
+   * @param poisson r : poisson avec lequel l'utilisateur a choisi de jouer
    */ 
-	public FenetreJeu(Rover r,boolean b) throws IOException{
-				
-		
+	public FenetreJeu(Poisson r,boolean b) throws IOException{
+						
 		//Initialisation de la fenêtre principale
 	
 		this.setTitle("Fenetre Jeu");
@@ -145,7 +134,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
         Restart.setFont(new Font("Agency FB",Font.BOLD,40));
         
                 
-        Titre = new JLabel("Poisson | Niveau "+ numNiveau);
+        Titre = new JLabel("Nemo | Niveau "+ numNiveau);
         Titre.setLayout(null);
         Titre.setBounds((int)(60.0/99.0*1500),
         (int)(1.5/105.0*1000),(int)(800.0/297.0*1500),(int)(13.0/210.0*1000));
@@ -204,19 +193,19 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
         Gravite.setForeground(new Color(249,200,93));
         Gravite.setFont(new Font("Agency FB",Font.BOLD,35));
                
-        Carbu = new JLabel("Carburant : "+(int)(pCarbu)+"%");
-        Carbu.setLayout(null);
-        Carbu.setBounds((int)(5.0/99.0*1500),
+        Nourri = new JLabel("Nourriture : "+(int)(pNourriture)+"%");
+        Nourri.setLayout(null);
+        Nourri.setBounds((int)(5.0/99.0*1500),
         (int)(16.0/21.0*1000),(int)(50.0/297.0*1500),(int)(1.5/21.0*1000));
-        Carbu.setForeground(new Color(249,200,93));
-        Carbu.setFont(new Font("Agency FB",Font.BOLD,35));
+        Nourri.setForeground(new Color(249,200,93));
+        Nourri.setFont(new Font("Agency FB",Font.BOLD,35));
 	
-		currentCarbu = new JProgressBar(0,100);
-		currentCarbu.setBounds((int)(5.0/99.0*1500),
+		currentNourriture = new JProgressBar(0,100);
+		currentNourriture.setBounds((int)(5.0/99.0*1500),
 		(int)(18.0/21.0*1000),(int)(40.0/297.0*1500),(int)(0.75/21.0*1000));
-		currentCarbu.setBorderPainted(true);
-		currentCarbu.setValue((int)(pCarbu));
-		currentCarbu.setForeground(new Color(249,200,93));
+		currentNourriture.setBorderPainted(true);
+		currentNourriture.setValue((int)(pNourriture));
+		currentNourriture.setForeground(new Color(249,200,93));
 		
 		largeurJeu = (int)(20.0/27.0*1500);
 		hauteurJeu = (int)(5.0/6.0*1000);
@@ -228,7 +217,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		
 		//Initialisation et placement initial des composants graphiques
 		
-		Perseverance = r;
+		Nemo = r;
 		AffJeu = new AffichageJeu(this);
 		AffJeu.setLayout(null);
 		AffJeu.setBounds((int)(70.0/297.0*1500),(int)(2.0/21.0*1000),
@@ -242,6 +231,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		Aide.setBackground(new Color(52,62,162));
 		Aide.setForeground(Color.white);
 		
+		
 		//ajout de tous ces composants au JPanel principal		
 		
 		JPanel panneauGlobal = new JPanel();
@@ -251,7 +241,6 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		panneauGlobal.add(Restart);
 		panneauGlobal.add(Titre);
 		panneauGlobal.add(Aide);
-		panneauGlobal.add(Son);
 		panneauGlobal.add(AffJeu);
 		panneauGlobal.add(Contour);
 		panneauGlobal.add(Vitesse);
@@ -260,8 +249,8 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		panneauGlobal.add(AngleI);
 		panneauGlobal.add(Vent);
         panneauGlobal.add(Gravite);
-		panneauGlobal.add(Carbu);
-		panneauGlobal.add(currentCarbu);
+		panneauGlobal.add(Nourri);
+		panneauGlobal.add(currentNourriture);
 		
 		//ajouts d'écouteurs sur les éléments utilisant l'IHM
 		
@@ -270,7 +259,6 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		Angle.addChangeListener(this);
 		Vitesse.addChangeListener(this);
 		Aide.addActionListener(this);
-		Son.addActionListener(this);
 		
 		//ajout du JPanel principal à la fenêtre + affichage de celle-ci
 		
@@ -279,9 +267,23 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		
 		//le jeu peut commencer
 		
+		debutJeu();
 	}
 	
-   public void niveau(int i){
+	/**
+   * \fn void debutJeu() : méthode de lancement du niveau 1
+   */ 
+	public void debutJeu(){
+		numNiveau = 1;
+		niveau(numNiveau); //affichage du niveau 1
+	}
+	
+	/**
+   * \fn void niveau(int i) : méthode affectant à chaque niveau ses caractéristiques propres et actualisant l'affichage en conséquence
+   * 
+   * @param int i : numéro du niveau à traiter
+   */ 
+	public void niveau(int i){
 		
 		//boucles contenant toutes les caractéristiques physiques propres à chaque niveau et mettant à jour l'affichage de la fenêtre pour chacun d'entre eux
 		
@@ -307,7 +309,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 			Vent.setText("VENT : "+v);
 		}
         Gravite.setText("GRAVITE : "+gravite);
-		Titre.setText("PERSEVERANCE Niveau "+ numNiveau);
+		Titre.setText("NEMO Niveau "+ numNiveau);
 	}
 	
 	/**
@@ -316,14 +318,10 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
    * @param ActionEvent e : événement associé
    */ 
 	public void actionPerformed (ActionEvent e){
-		if(e.getSource() == Son){
-			if(audioOn){
-				fond.arret();
-			}else{
-				fond.enBoucle();
-			}
+		if(e.getSource() == Aide){ //appui sur le bouton aide
+			String T = readFile("texte/aide.txt");
+			JOptionPane.showMessageDialog(this,T); //message rappelant les règles du jeu
 		}
-		
 		if(e.getSource()==Start){ //appui sur le bouton Start
 			if(!enJeu){ //si l'utilisateur n'est pas déjà en train de jouer
 				enJeu = true; //alors il commence à jouer
@@ -332,18 +330,23 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		}
 		if(e.getSource()==mt){ //toutes les millisecondes si le timer est en route (= si l'utilisateur est en jeu)
 			
-			//mise à jour de la position du Rover et de ses caractéristiques
+			//mise à jour de la position du poisson et de ses caractéristiques
 			
-			pCarbu =pCarbu-0.01;
-			currentCarbu.setValue((int)(pCarbu));
-			Carbu.setText("Carburant : "+(int)(pCarbu)+"%");
-			Perseverance.ChangePosition(v,vI,aI,temps/15,gravite);
+			pNourriture =pNourriture-0.01;
+			currentNourriture.setValue((int)(pNourriture));
+			Nourri.setText("Nourriture : "+(int)(pNourriture)+"%");
+			Nemo.ChangePosition(v,vI,aI,temps/15,gravite);
 			temps++;
 			AffJeu.repaint();
 			
 			//vérifiacation de l'avancée du niveau
 			
 			niveauTermine();
+		}
+		if(e.getSource()==Restart){ //appui sur le bouton restart
+			if(!enJeu){
+				restart(); //on relance le jeu
+			}
 		}
 	}
 	
@@ -369,9 +372,6 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
    */ 
 	public void stateChanged(ChangeEvent e){
 		if(!enJeu){ //l'utilisateur ne peut modifier aucunes caractéristiques si le niveau est en cours
-			if(audioOn){
-				tick.lecture();
-			}
 			if(e.getSource()==Vitesse){  
 				
 				//mise à jour + affichage changement vitesse
@@ -394,13 +394,12 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
    */ 
     public void niveauTermine() {
 		
-		if((int)(Perseverance.origine.y)<=(int)(4.5/5.0*hauteurJeu-Perseverance.hauteur+10) &&
-		(int)(Perseverance.origine.y)>=(int)(4.5/5.0*hauteurJeu-Perseverance.hauteur)
-		 && (Perseverance.origine.x>=3.5/5.0*largeurJeu-Perseverance.largeur) 
-		 && Perseverance.origine.x<=3.5/5.0*largeurJeu+1.5/5.0*largeurJeu){ //si le niveau a été réussi
-		
-			 
-			 //passage et lancement du niveau suivant
+		if((int)(Nemo.origine.y)<=(int)(4.5/5.0*hauteurJeu-Nemo.hauteur+10) &&
+		(int)(Nemo.origine.y)>=(int)(4.5/5.0*hauteurJeu-Nemo.hauteur)
+		 && (Nemo.origine.x>=3.5/5.0*largeurJeu-Nemo.largeur) 
+		 && Nemo.origine.x<=3.5/5.0*largeurJeu+1.5/5.0*largeurJeu){ //si le niveau a été réussit
+
+			//passage et lancement du niveau suivant
 			 
 			numNiveau++;
 			niveau(numNiveau);
@@ -416,11 +415,11 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 			timerStop();
 			enJeu = false;
 			
-			//réinitialisation des attributs d'affichage graphique + replacement du rover et des composants
+			//réinitialisation des attributs d'affichage graphique + replacement du poisson et des composants
 			
-			AffJeu.touchCarbu=false;
+			AffJeu.toucherNourriture=false;
 			AffJeu.affiche=true;
-			Perseverance.origine = new APoint(0,833-100);
+			Nemo.origine = new APoint(0,833-100);
 			Angle.setValue(45);
 			Vitesse.setValue(50);
 			aI = Angle.getValue();
@@ -429,26 +428,10 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 			VitesseI.setText("Vitesse initiale : "+vI+" km/h");
 			
 			
-		}else if((Perseverance.origine.y>hauteurJeu-Perseverance.hauteur) || (Perseverance.origine.x+Perseverance.largeur>=largeurJeu)
-		 || ((int)(pCarbu)==0) || (((int)(Perseverance.origine.x+Perseverance.largeur)>=(int)(3.5/5.0*largeurJeu))&&((int)(Perseverance.origine.y+Perseverance.hauteur)>=(int)(4.5/5.0*hauteurJeu)))
-		 || toucheMeteorite || toucheTrouNoir){ //si le niveau n'a pas été réussi ou qu'on a touché un trou noir
-
-			}
+		}else if((Nemo.origine.y>hauteurJeu-Nemo.hauteur) || (Nemo.origine.x+Nemo.largeur>=largeurJeu)
+		 || ((int)(pNourriture)==0) || (((int)(Nemo.origine.x+Nemo.largeur)>=(int)(3.5/5.0*largeurJeu))&&((int)(Nemo.origine.y+Nemo.hauteur)>=(int)(4.5/5.0*hauteurJeu)))
+		 || toucheRequin ){ //si le niveau n'a pas été réussi ou qu'on a touché un trou noir
 			
-			if(toucheTrouNoir){ //si la raison de son échec est le contact avec un trou noir
-				
-				//gestion sonore
-				
-				if(newNumNiveau>numNiveau+1){
-						trouNoirBonus.lecture();
-				}else if(newNumNiveau<numNiveau){
-						trouNoirMalus.lecture();
-				}
-				
-				//actualisation du numéro du niveau
-				
-				numNiveau = newNumNiveau;
-			}
 			
 			//lancement du niveau (le même que précedamment sauf si l'utilisateur a touché un trou noir
 			
@@ -458,30 +441,34 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 			
 			timerStop();
 			
-			//malus : baisse du carburant et affichage de cette baisse
+			//malus : baisse du nourriture et affichage de cette baisse
 			  
-			pCarbu=pCarbu-15.0;
-			if(pCarbu<0){
-				pCarbu=0;
+			pNourriture=pNourriture-15.0;
+			if(pNourriture<0){
+				pNourriture=0;
 			}
-			currentCarbu.setValue((int)(pCarbu));
-			Carbu.setText("Carburant : "+(int)(pCarbu)+"%");
-	
-            
-            //réinitialisation des attributs d'affichage graphique + replacement du rover et des composants
+			currentNourriture.setValue((int)(pNourriture));
+			Nourri.setText("Nourriture : "+(int)(pNourriture)+"%");
 			
-			AffJeu.touchCarbu=false;
+			if(!toucheRequin && (int)(pNourriture)!=0){ //si la raison de l'échec de l'utilisateur est la sortie des limites du jeu
+				try{
+					new FenetreChangementNiveau(numNiveau,this); //fenêtre de transition entre niveaux (lancée à un autre moment si nous ne sommes pas dans cette boucle)
+				}catch(IOException Exception){
+				}
+            }
+            
+            //réinitialisation des attributs d'affichage graphique + replacement du poisson et des composants
+			
+			AffJeu.toucherNourriture=false;
 			AffJeu.affiche=true;
-			Perseverance.origine = new APoint(0,833-100);
+			Nemo.origine = new APoint(0,833-100);
 			Angle.setValue(45);
 		    Vitesse.setValue(50);
 		    aI = Angle.getValue();
 			AngleI.setText("Angle initial : "+aI+" \u00b0");
 			vI = Vitesse.getValue();
 			VitesseI.setText("Vitesse initiale : "+vI+" km/h");
-			toucheMeteorite=false;
-			toucheTrouNoir = false;
-			
+			toucheRequin=false;			
 		}
 		
 		//test afin de savoir si l'utilisateur a gagné ou perdu
@@ -492,13 +479,28 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 	/**
    * \fn void WinOrLose() : méthode permettant de tester si l'utilisateur a terminé sa partie en gagnant ou perdant et d'agir en conséquence
    */
-	
+	public void WinOrLose(){
+		if(numNiveau==6){//si l'utilisateur a réussi le niveau 5, il a gagné
+			try{
+				new FenetreWin(this); //création de la fenêtre de victoire
+				setVisible(false);
+			}catch(IOException Exception){
+			}
+				
+		}else if((int)(pNourriture)<=0){ //si l'utilisateur n'a plus de nourriture, il a perdu
+			try{
+				new FenetreLose(this); //création de la fenêtre game over
+				setVisible(false);
+			}catch(IOException Exception){
+			}
+		}
+	}
+   
    /**
    * \fn void WinOrLose() : méthode permettant de relancer le jeu et de recommencer au début
    */
 	public void restart(){
 		mt.stop();
-
 		setVisible(false);
 		new FenetreStart();
 	}
