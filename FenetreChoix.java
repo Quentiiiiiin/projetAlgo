@@ -71,11 +71,9 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
     // private Audio aStart = new Audio("audio/bouton.wav"); 
     
     /**
-   * \fn FenetreChoix(boolean b) : constructeur FenetreChoix
-   * 
-   * @param boolean b : booléen indiquant si le son était allumé ou non dans la fenêtre start
+   * \fn FenetreChoix() : constructeur FenetreChoix
    */ 
-    public FenetreChoix (boolean b) throws IOException{
+    public FenetreChoix () throws IOException{
 		
 		// audioOn=b;
 		
