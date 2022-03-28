@@ -113,7 +113,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
 		Floflo.setBackground(new Color(219,190,242));
         Floflo.addActionListener(this); 
         Floflo.setFont(new Font("Agency FB",Font.BOLD,25));
-        Floflo.add(Floflo);
+        Fond.add(Floflo);
         
         Loulou = new JButton("Louis");
 		Loulou.setLayout(null);
@@ -121,7 +121,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
 		Loulou.setBackground(new Color(242,190,214));
         Loulou.addActionListener(this);
         Loulou.setFont(new Font("Agency FB",Font.BOLD,25)); 
-        Loulou.add(Loulou);
+        Fond.add(Loulou);
         
         Qq= new JButton("Quentin");
 		Qq.setLayout(null);
@@ -145,7 +145,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
 	    Dodo.setBackground(new Color(247,198,197));
         Dodo.addActionListener(this); 
         Dodo.setFont(new Font("Agency FB",Font.BOLD,25));
-        Dodo.add(Dodo);
+        Fond.add(Dodo);
         
         Choisir = new JButton("CHOISIR");
 		Choisir.setLayout(null);
