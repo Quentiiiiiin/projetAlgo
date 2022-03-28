@@ -1,7 +1,6 @@
 import java.io.*;
 
-import javax.swing.JFrame; 
-public class main extends JFrame{
+public class main {
     public static void main (String[] args) {
         try{
             new FenetreChoix(); //création de la fenêtre choix
