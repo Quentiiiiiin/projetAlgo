@@ -52,7 +52,7 @@ public class FenetreStart extends JFrame implements ActionListener{
 		txt.setForeground(new Color(0,0,255));  
 		txt.setBackground(new Color(0,0,0)); 
 		
-		String T = readFile("debut.txt");
+		String T = readFile("texte/debut.txt");
         JTextArea Texte = new JTextArea(T);
         Texte.setBackground(new Color(0,127,255)); 
         Texte.setForeground(new Color(206,206,206));

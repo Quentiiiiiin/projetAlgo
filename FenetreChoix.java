@@ -77,14 +77,14 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         Titre.setLayout(null);
         Titre.setBounds(10,0,400,100);
         Titre.setFont(new Font("Agency FB",Font.BOLD,25));
-        Titre.setForeground(new Color(249,200,93));
+        Titre.setForeground(new Color(0,0,255));
         Fond.add(Titre);
         
         JLabel NomJeu = new JLabel ("NEMO");
         NomJeu.setLayout(null);
         NomJeu.setBounds(730,10,270,100);
         NomJeu.setFont(new Font("Agency FB",Font.BOLD,45));
-        NomJeu.setForeground(new Color(249,200,93));
+        NomJeu.setForeground(new Color(206,206,206));
         Fond.add(NomJeu);
        
         JLabel A = new JLabel(new ImageIcon("images/Nemo.jpg"));
@@ -150,8 +150,8 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         Choisir = new JButton("CHOISIR");
 		Choisir.setLayout(null);
 		Choisir.setBounds(725,800,250,100);
-		Choisir.setBackground(new Color(249,200,93));
-		Choisir.setForeground(new Color(52,62,162));
+		Choisir.setBackground(new Color(206,206,206));
+		Choisir.setForeground(new Color(0,0,255));
         Choisir.addActionListener(this); 
         Choisir.setFont(new Font("Agency FB",Font.BOLD,35));
         Fond.add(Choisir);
@@ -159,8 +159,8 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         Texte = new JTextArea();
         Texte.setEditable(false);
         Texte.setLayout(null);
-        Texte.setBackground(new Color(52,62,162));
-        Texte.setForeground(new Color(249,200,93));
+        Texte.setBackground(new Color(0,0,255));
+        Texte.setForeground(new Color(206,206,206));
         Texte.setFont(new Font("Agency FB",Font.BOLD,25));
         Texte.setBounds(725,300,300,400);
         Fond.add(Texte);
@@ -168,7 +168,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         Fond2 = new JPanel();
         Fond2.setLayout(null);
         Fond2.setBounds(700,0,300,1000);
-        Fond2.setBackground(new Color(52,62,162));
+        Fond2.setBackground(new Color(0,0,255));
         Fond.add(Fond2);
 
         
