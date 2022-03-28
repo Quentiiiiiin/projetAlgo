@@ -2,14 +2,14 @@ import java.io.*; //image
 import java.awt.image.*; //BufferedImage
 
 /**
- * \class Poisson : classe créant un rover
+ * \class Poisson : classe créant un poisson
  */
 public class Poisson{
 	
-	//<!image du rover
+	//<!image du poisson
 	BufferedImage image;
 	
-	//<!dimensions du rover
+	//<!dimensions du poisson
 	int hauteur, largeur;
 	
 	//<!point (x,y) désignant l'origine du Poisson
