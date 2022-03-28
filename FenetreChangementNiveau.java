@@ -20,8 +20,6 @@ public class FenetreChangementNiveau extends JFrame implements ActionListener{
 	//<!timer permettant de faire bouger l'affichage
 	private Timer mt;
 		
-	//<!variable permettant de compter le temps qui passe
-	private double temps;
 	
 	/**
    * \fn FenetreChangementNiveau(int i, FenetreJeu f) : constructeur FenetreChangementNiveau
