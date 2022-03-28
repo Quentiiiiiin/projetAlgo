@@ -56,7 +56,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
     private JTextArea Texte;
     
     //<!poisson choisi
-    private Poisson poverChoisi;
+    private Poisson poissonChoisi;
     
 
     /**
@@ -256,10 +256,10 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
 	//appui sur le bouton choisir
         
         if(e.getSource()==Choisir){
-            if(roverChoisi!=null){ //si l'utilisateur a choisi un poisson
+            if(poissonChoisi!=null){ //si l'utilisateur a choisi un poisson
 				try{
 
-					new FenetreJeu(roverChoisi); //création de la fenêtre principale de jeu
+					new FenetreJeu(poissonChoisi); //création de la fenêtre principale de jeu
 
 
 
