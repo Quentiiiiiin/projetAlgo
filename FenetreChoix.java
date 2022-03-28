@@ -58,6 +58,17 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
     //<!poisson choisi
     private Poisson poissonChoisi;
     
+    //<!fond sonore
+    // private Audio a = new Audio("audio/choixRover.wav");
+    
+    // //<!son du bouton de sélection de chaque rover
+    // private Audio aChoix = new Audio("audio/boutonSelection.wav");  
+    
+    // //<!son du bouton choix si aucun rover sélectionné
+    // private Audio erreurChoix = new Audio("audio/erreurChoix.wav"); 
+    
+    // //<!son du bouton choix si un rover a été sélectionné
+    // private Audio aStart = new Audio("audio/bouton.wav"); 
     
     /**
    * \fn FenetreChoix(boolean b) : constructeur FenetreChoix
@@ -119,44 +130,44 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         Fond.add(E);
         
         Floflo = new JButton("Florent");
-		Didi.setLayout(null);
-		Didi.setBounds(100,305,200,50);
-		Didi.setBackground(new Color(219,190,242));
-        Didi.addActionListener(this); 
-        Didi.setFont(new Font("Agency FB",Font.BOLD,25));
-        Fond.add(Floflo);
+		Floflo.setLayout(null);
+		Floflo.setBounds(100,305,200,50);
+		Floflo.setBackground(new Color(219,190,242));
+        Floflo.addActionListener(this); 
+        Floflo.setFont(new Font("Agency FB",Font.BOLD,25));
+        Floflo.add(Floflo);
         
         Loulou = new JButton("Louis");
-		Marjo.setLayout(null);
-		Marjo.setBounds(400,305,200,50);
-		Marjo.setBackground(new Color(242,190,214));
-        Marjo.addActionListener(this);
-        Marjo.setFont(new Font("Agency FB",Font.BOLD,25)); 
-        Fond.add(Loulou);
+		Loulou.setLayout(null);
+		Loulou.setBounds(400,305,200,50);
+		Loulou.setBackground(new Color(242,190,214));
+        Loulou.addActionListener(this);
+        Loulou.setFont(new Font("Agency FB",Font.BOLD,25)); 
+        Loulou.add(Loulou);
         
         Qq= new JButton("Quentin");
-		Mama.setLayout(null);
-		Mama.setBounds(400,605,200,50);
-		Mama.setBackground(new Color(251,236,225));
-		Mama.setFont(new Font("Agency FB",Font.BOLD,25));
-        Mama.addActionListener(this); 
+		Qq.setLayout(null);
+		Qq.setBounds(400,605,200,50);
+		Qq.setBackground(new Color(251,236,225));
+		Qq.setFont(new Font("Agency FB",Font.BOLD,25));
+        Qq.addActionListener(this); 
         Fond.add(Qq);
         
         Teqteq = new JButton("Tequel");
-		Floflo.setLayout(null);
-		Floflo.setBounds(100,605,200,50);
-		Floflo.setBackground(new Color(180,207,250));
-        Floflo.addActionListener(this);
-        Floflo.setFont(new Font("Agency FB",Font.BOLD,25)); 
+		Teqteq.setLayout(null);
+		Teqteq.setBounds(100,605,200,50);
+		Teqteq.setBackground(new Color(180,207,250));
+        Teqteq.addActionListener(this);
+        Teqteq.setFont(new Font("Agency FB",Font.BOLD,25)); 
         Fond.add(Teqteq);
         
         Dodo = new JButton("Dory");
-		Jaja.setLayout(null);
-		Jaja.setBounds(250,905,200,50);
-		Jaja.setBackground(new Color(247,198,197));
-        Jaja.addActionListener(this); 
-        Jaja.setFont(new Font("Agency FB",Font.BOLD,25));
-        Fond.add(Dodo);
+		Dodo.setLayout(null);
+		Dodo.setBounds(250,905,200,50);
+	    Dodo.setBackground(new Color(247,198,197));
+        Dodo.addActionListener(this); 
+        Dodo.setFont(new Font("Agency FB",Font.BOLD,25));
+        Dodo.add(Dodo);
         
         Choisir = new JButton("CHOISIR");
 		Choisir.setLayout(null);
@@ -244,9 +255,9 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
 	//appui sur le bouton choisir
         
         if(e.getSource()==Choisir){
-            if(roverChoisi!=null){ //si l'utilisateur a choisi un poisson
+            if(poissonChoisi!=null){ //si l'utilisateur a choisi un poisson
 				try{
-					new FenetreJeu(roverChoisi); //création de la fenêtre principale de jeu
+					new FenetreJeu(poissonChoisi); //création de la fenêtre principale de jeu
 
 
 
@@ -263,4 +274,3 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         }
     
     }
-    
