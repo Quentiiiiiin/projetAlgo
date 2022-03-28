@@ -43,12 +43,6 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
     //<!bouton sélection du poisson Dory
     private JButton Dodo;
     
-    // //<!bouton permettant de couper le son
-    // private JButton Son;
-    
-    // //<!booléen permettant de savoir si le son est activé ou non
-    // private boolean audioOn;
-    
     //<!zone de fond bleu à droite de la fenêtre
     private JPanel Fond2;
     
@@ -58,24 +52,10 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
     //<!poisson choisi
     private Poisson poissonChoisi;
     
-    //<!fond sonore
-    // private Audio a = new Audio("audio/choixRover.wav");
-    
-    // //<!son du bouton de sélection de chaque rover
-    // private Audio aChoix = new Audio("audio/boutonSelection.wav");  
-    
-    // //<!son du bouton choix si aucun rover sélectionné
-    // private Audio erreurChoix = new Audio("audio/erreurChoix.wav"); 
-    
-    // //<!son du bouton choix si un rover a été sélectionné
-    // private Audio aStart = new Audio("audio/bouton.wav"); 
-    
     /**
    * \fn FenetreChoix() : constructeur FenetreChoix
    */ 
     public FenetreChoix () throws IOException{
-		
-		// audioOn=b;
 		
         //initialisation de la fenêtre
         
@@ -190,17 +170,6 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         Fond2.setBounds(700,0,300,1000);
         Fond2.setBackground(new Color(52,62,162));
         Fond.add(Fond2);
-        
-
-
-
-
-
-
-
-
-
-
 
         
 		//initialisation des poissons
@@ -215,7 +184,10 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
     
     }
 
-   /* 
+    /**
+   * \fn void actionPerformed(ActionEvent e) : méthode permettant de lancer le jeu si
+   * l'utilisateur appuie sur le bouton de choix 
+   * 
    * @param ActionEvent e : événement associé
    */ 
     public void actionPerformed (ActionEvent e){ 
@@ -256,17 +228,10 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
             if(poissonChoisi!=null){ //si l'utilisateur a choisi un poisson
 				try{
 					new FenetreJeu(poissonChoisi); //création de la fenêtre principale de jeu
-
-
-
-                    // FENETRE JEU PREND QUE 1 PARAMETRE
-
-
-
 					setVisible(false);
 				}catch(IOException exception){
 				}
-			}else{ 
+			}else{ //si l'utilisateur n'a choisi aucun poisson
 				JOptionPane.showMessageDialog(this,"Veuillez s\u00e9lectionner un poisson !"); //message d'erreur
 			}
         }
