@@ -87,7 +87,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         NomJeu.setForeground(new Color(249,200,93));
         Fond.add(NomJeu);
        
-        JLabel A = new JLabel(new ImageIcon("images/Dory.jpg"));
+        JLabel A = new JLabel(new ImageIcon("images/Nemo.jpg"));
         A.setBounds(100,90,200,200);
         Fond.add(A);
         
@@ -103,7 +103,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         D.setBounds(400,390,200,200);
         Fond.add(D);
         
-        JLabel E = new JLabel(new ImageIcon("images/Nemo.jpg"));
+        JLabel E = new JLabel(new ImageIcon("images/Dory.jpg"));
         E.setBounds(250,690,200,200);
         Fond.add(E);
         
@@ -174,11 +174,11 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         
 		//initialisation des poissons
         
-        Florent = new Poisson(ImageIO.read(new File("images/Dory.jpg")),"texte/Florent.txt");
-        Louis = new Poisson(ImageIO.read(new File("images/Dory.jpg")),"texte/Louis.txt");
-        Quentin = new Poisson(ImageIO.read(new File("images/Dory.jpg")),"texte/Quentin.txt");
-        Tequel = new Poisson(ImageIO.read(new File("images/Dory.jpg")),"texte/Tequel.txt");
-        Dory = new Poisson(ImageIO.read(new File("images/Dory.jpg")),"texte/Dory.txt");
+        Florent = new Poisson(ImageIO.read(new File("images/nemo.png")),"texte/Florent.txt");
+        Louis = new Poisson(ImageIO.read(new File("images/crab.png")),"texte/Louis.txt");
+        Quentin = new Poisson(ImageIO.read(new File("images/rai.png")),"texte/Quentin.txt");
+        Tequel = new Poisson(ImageIO.read(new File("images/deb.png")),"texte/Tequel.txt");
+        Dory = new Poisson(ImageIO.read(new File("images/dory.png")),"texte/Dory.txt");
               
         this.setVisible(true);
     

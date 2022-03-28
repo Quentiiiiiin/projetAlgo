@@ -18,7 +18,7 @@ public class Nourriture extends ElementMarin{
 		//initialisation de l'image en fonction du bonus du carburant
 		
 		if(bonus==1){
-			image = ImageIO.read(new File("images/Nourriture1.png"));
+			image = ImageIO.read(new File("images/nourriture1.png"));
 		}else if(bonus==2){
 			image = ImageIO.read(new File("images/Nourriture2.png"));
 		}

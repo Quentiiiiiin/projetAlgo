@@ -45,11 +45,11 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 	//<!zone d'affichage de l'angle initial du poisson
 	private JLabel AngleI;
 	
-	//<!zone d'affichage du vent présent sur le niveau
-	private JLabel Vent;
+	//<!zone d'affichage du courant présent sur le niveau
+	private JLabel Courant;
 	
 	//<!zone d'affichage de la gravité présente sur le niveau
-    private JLabel Gravite;
+    private JLabel Viscosite;
     
     //<!zone d'affichage pourcentage nourriture restant
 	private JLabel Nourri;
@@ -63,14 +63,17 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 	//<!angle initial du poisson
 	int aI;
 	
-	//<!vent présent sur le niveau en cours
-	private int v;
+	//<!courant en X présent sur le niveau en cours
+	private int cY;
+
+	//<!courant en Y présent sur le niveau en cours
+	private int cX;
 	
 	//<!pourcentage de nourriture restant au poisson
 	double pNourriture=100.0;
 	
 	//<!gravité présente sur le niveau en cours
-	double gravite;
+	double viscosite;
 	
 	//<!numéro du niveau en cours
 	int numNiveau;
@@ -102,6 +105,35 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
    * @param boolean b : booléen indiquant si le son était allumé ou non dans la fenêtre start
    * @param poisson r : poisson avec lequel l'utilisateur a choisi de jouer
    */ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
 	public FenetreJeu(Poisson r) throws IOException{
 						
 		//Initialisation de la fenêtre principale
@@ -179,19 +211,19 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
         AngleI.setFont(new Font("Agency FB",Font.BOLD, 19));
         
                 
-        Vent = new JLabel();
-        Vent.setLayout(null);
-        Vent.setBounds((int)(5.0/99.0*1500),
+        Courant = new JLabel();
+        Courant.setLayout(null);
+        Courant.setBounds((int)(5.0/99.0*1500),
         (int)(0.50/21.0*1000)+20,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
-        Vent.setForeground(new Color(249,200,93));
-        Vent.setFont(new Font("Agency FB",Font.BOLD,35));
+        Courant.setForeground(new Color(249,200,93));
+        Courant.setFont(new Font("Agency FB",Font.BOLD,35));
         
-        Gravite = new JLabel();
-        Gravite.setLayout(null);
-        Gravite.setBounds((int)(5.0/99.0*1500),
+        Viscosite = new JLabel();
+        Viscosite.setLayout(null);
+        Viscosite.setBounds((int)(5.0/99.0*1500),
         (int)(0.50/21.0*1000)-20,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
-        Gravite.setForeground(new Color(249,200,93));
-        Gravite.setFont(new Font("Agency FB",Font.BOLD,35));
+        Viscosite.setForeground(new Color(249,200,93));
+        Viscosite.setFont(new Font("Agency FB",Font.BOLD,35));
                
         Nourri = new JLabel("Nourriture : "+(int)(pNourriture)+"%");
         Nourri.setLayout(null);
@@ -247,8 +279,8 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		panneauGlobal.add(VitesseI);
 		panneauGlobal.add(Angle);
 		panneauGlobal.add(AngleI);
-		panneauGlobal.add(Vent);
-        panneauGlobal.add(Gravite);
+		panneauGlobal.add(Courant);
+        panneauGlobal.add(Viscosite);
 		panneauGlobal.add(Nourri);
 		panneauGlobal.add(currentNourriture);
 		
@@ -267,9 +299,48 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		
 		//le jeu peut commencer
 		
-		debutJeu();
+		// debutJeu();
 	}
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	/**
    * \fn void debutJeu() : méthode de lancement du niveau 1
    */ 
@@ -288,27 +359,34 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		//boucles contenant toutes les caractéristiques physiques propres à chaque niveau et mettant à jour l'affichage de la fenêtre pour chacun d'entre eux
 		
 		if(i==1){
-			gravite = 2.0;
-			v =(int) (1+2*Math.random()-1);
+			viscosite = 2.0;
+			cX =(int) (1+2*Math.random()-1);
+			cY =(int) (1+2*Math.random()-1);
 		}else if(i==2){
-			gravite = 2.25;
-			v =(int)(1+4*Math.random()-2);
+			viscosite = 2.25;
+			cX =(int)(1+4*Math.random()-2);
+			cY =(int) (1+2*Math.random()-2);
 		}else if(i==3){
-			gravite = 2.75;
-			v =(int)(1+6*Math.random()-3);
+			viscosite = 2.75;
+			cX =(int)(1+6*Math.random()-3);
+			cY =(int) (1+2*Math.random()-3);
 		}else if(i==4){
-			gravite = 3.0;
-			v =(int)(1+8*Math.random()-4);
+			viscosite = 3.0;
+			cX =(int)(1+8*Math.random()-4);
+			cY =(int) (1+2*Math.random()-4);
 		}else if(i==5){
-			gravite = 3.25;
-			v =(int)(1+10*Math.random()-5);
+			viscosite= 3.25;
+			cX =(int)(1+10*Math.random()-5);
+			cY =(int) (1+2*Math.random()-5);
 		}
-		if(v>=0){
-			Vent.setText("VENT : "+"+"+v);
-		}else if(v<0){
-			Vent.setText("VENT : "+v);
+
+
+		if(cX>=0){
+			Courant.setText("Courant en X : "+"+"+cX);
+		}else if(cX<0){
+			Courant.setText("Courant en X : "+cX);
 		}
-        Gravite.setText("GRAVITE : "+gravite);
+        Viscosite.setText("Viscosité : "+viscosite);
 		Titre.setText("NEMO Niveau "+ numNiveau);
 	}
 	
@@ -335,10 +413,48 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 			pNourriture =pNourriture-0.01;
 			currentNourriture.setValue((int)(pNourriture));
 			Nourri.setText("Nourriture : "+(int)(pNourriture)+"%");
-			Nemo.ChangePosition(v,vI,aI,temps/15,gravite);
+			Nemo.ChangePosition(cX, cY, vI,aI,temps/15,viscosite);
 			temps++;
 			AffJeu.repaint();
 			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			//vérifiacation de l'avancée du niveau
 			
 			niveauTermine();

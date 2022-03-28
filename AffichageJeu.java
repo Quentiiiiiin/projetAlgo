@@ -43,7 +43,7 @@ public class AffichageJeu extends JPanel{
 	public AffichageJeu(FenetreJeu f) throws IOException{
 		
 		this.f=f;
-		fondMarin= ImageIO.read(new File("images/fond_etoile.jpg")); //l'image de fond ne peut pas être créée dans la méthode paint (trop de ralentissement créé par la boucle try catch
+		fondMarin= ImageIO.read(new File("images/fondEau.jpg")); //l'image de fond ne peut pas être créée dans la méthode paint (trop de ralentissement créé par la boucle try catch
 		
 		//initialisation des tableaux d'objets
 		
@@ -93,7 +93,7 @@ public class AffichageJeu extends JPanel{
 			g.setColor(new Color(0,127,255));
 			for(int i=0;i<10;i++){
 				g.drawOval((int)(f.vI*Math.cos(Math.toRadians(f.aI))*(i+1)+f.Nemo.largeur),
-				(int)(f.gravite*Math.pow(i+1,2)-f.vI*Math.sin(Math.toRadians(f.aI))*(i+1)+833-f.Nemo.hauteur),
+				(int)(f.viscosite*Math.pow(i+1,2)-f.vI*Math.sin(Math.toRadians(f.aI))*(i+1)+833-f.Nemo.hauteur),
 				5,5);
 			}
 		}
