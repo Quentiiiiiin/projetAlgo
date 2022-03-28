@@ -46,7 +46,7 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
         Gif.setBackground(new Color(0,0,162)); 
         Fond.add(Gif);
         
-        JLabel I1 = new JLabel(new ImageIcon("Nemo.jpg"));
+        JLabel I1 = new JLabel(new ImageIcon("images/Nemo.jpg"));
         I1.setBounds(40,40,640,510);
         Gif.add(I1);
         
