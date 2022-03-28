@@ -23,7 +23,7 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
    * 
    * @param FenetreJeu f : objet désignant la fenêtre principale de jeu
    */
-    public FenetreFinale (/*FenetreJeu f*/) {
+    public FenetreFinale (FenetreJeu f) {
 				
 		//initialisation de la fenêtre
 		

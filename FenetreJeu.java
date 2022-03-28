@@ -102,7 +102,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
    * @param boolean b : booléen indiquant si le son était allumé ou non dans la fenêtre start
    * @param poisson r : poisson avec lequel l'utilisateur a choisi de jouer
    */ 
-	public FenetreJeu(Poisson r,boolean b) throws IOException{
+	public FenetreJeu(Poisson r) throws IOException{
 						
 		//Initialisation de la fenêtre principale
 	
