@@ -1,7 +1,11 @@
-public class main{
+import java.io.*;
+
+public class main {
     public static void main (String[] args) {
-        
-        new FenetreStart();
+        try{
+            new FenetreChoix(); //création de la fenêtre choix
+        }catch(IOException exception){
+        }
     }
 }
   

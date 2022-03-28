@@ -24,5 +24,9 @@ public class Requin extends ElementMarin{
    */
 	public void action(){
 		f.toucheRequin = true; //le booléen gérant le contact requin dans la fenêtre jeu devient true
+		if(f.pNourriture>15.0){
+			catch(IOException Exception){
+			}
+		}
 	}
 }
