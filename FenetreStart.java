@@ -85,9 +85,11 @@ public class FenetreStart extends JFrame implements ActionListener{
 	 public void actionPerformed (ActionEvent e){
 		 
 		if(e.getSource()==start1){ //lancement du jeu
-			
+			try{
 			   setVisible(false); //fermeture de la fenêtre start
 			   new FenetreChoix(); //création de la fenêtre choix
+		   }catch(IOException exception){
+		   }
 	   }
 	 }
 	 
