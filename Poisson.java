@@ -29,22 +29,23 @@ public class Poisson{
 		image = i;
 		hauteur = 100;
 		largeur = 100;
-		origine = new APoint(0,833-100);
+		origine = new APoint(0,0);
 	}
 	
 	/**
-   * \fn void ChangePosition(int courant, int vitesseI, int angleI, double t, double viscosite) : méthode gérant l'actualisation de la position du poisson pour le déplacement de celui-ci
+   * \fn void ChangePosition(int courantX, int courantY, int vitesseI, int angleI, double t, double viscosite) : méthode gérant l'actualisation de la position du poisson pour le déplacement de celui-ci
    * 
-   * @param int courant : courant du niveau en cours
+   * @param int courantX : courantX du niveau en cours
+   * @param int courantY : courantY du niveau en cours
    * @param int vitesseI : vitesse initiale du Poisson
    * @param int angleI : angle initial du Poisson
    * @param double t : temps depuis le départ du Poisson
    * @param double viscosite : viscosité du milieu en cours
    */ 
-	public void ChangePosition(int courant, int vitesseI, int angleI, double t, double viscosite){//méthode effectuant le changement de la position du poisson en fonction du temps et des paramètres du niveau en cours
+	public void ChangePosition(int courantX, int courantY, int vitesseI, int angleI, double t, double viscosite){//méthode effectuant le changement de la position du poisson en fonction du temps et des paramètres du niveau en cours
 				
-        origine.x = viscosite*Courantx*Math.pow(t,2) + vitesseI * Math.cos (Math.toRadians(angleI)) + 0;
-        origine.y = viscosite*Couranty*Math.pow(t,2) - vitesseI * Math.sin (Math.toRadians(angleI)) + 0;
+        origine.x = viscosite*courantX*Math.pow(t,2) + vitesseI * Math.cos (Math.toRadians(angleI)) + 0;
+        origine.y = viscosite*courantY*Math.pow(t,2) - vitesseI * Math.sin (Math.toRadians(angleI)) + 0;
         
 	}	
 }
