@@ -174,7 +174,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         
 		//initialisation des poissons
         
-        Florent = new Poisson(ImageIO.read(new File("images/Dory.jpg")),"texte/Forent.txt");
+        Florent = new Poisson(ImageIO.read(new File("images/Dory.jpg")),"texte/Florent.txt");
         Louis = new Poisson(ImageIO.read(new File("images/Dory.jpg")),"texte/Louis.txt");
         Quentin = new Poisson(ImageIO.read(new File("images/Dory.jpg")),"texte/Quentin.txt");
         Tequel = new Poisson(ImageIO.read(new File("images/Dory.jpg")),"texte/Tequel.txt");
