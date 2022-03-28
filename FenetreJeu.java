@@ -90,7 +90,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 	//<!booléen permettant de savoir si un niveau est en cours de jeu ou non
 	boolean enJeu=false;
 	
-	//<!booléen permettant de savoir si le poisson a touché une météorite
+	//<!booléen permettant de savoir si le poisson a touché un requin
 	boolean toucheRequin=false; 
 
 	//<!timer gérant l'évolution du jeu et servant de base temporelle
@@ -101,39 +101,8 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 	
 	/**
    * \fn FenetreJeu(poisson r, boolean b) : constructeur FenetreJeu
-   * 
-   * @param boolean b : booléen indiquant si le son était allumé ou non dans la fenêtre start
    * @param poisson r : poisson avec lequel l'utilisateur a choisi de jouer
    */ 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-
-
-
-
-
-
 	public FenetreJeu(Poisson r) throws IOException{
 						
 		//Initialisation de la fenêtre principale
@@ -301,45 +270,6 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		
 		// debutJeu();
 	}
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	/**
    * \fn void debutJeu() : méthode de lancement du niveau 1
@@ -416,47 +346,6 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 			Nemo.ChangePosition(cX, cY, vI,aI,temps/15,viscosite);
 			temps++;
 			AffJeu.repaint();
-			
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			//vérifiacation de l'avancée du niveau
-			
 			niveauTermine();
 		}
 		if(e.getSource()==Restart){ //appui sur le bouton restart
@@ -546,10 +435,10 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 			
 		}else if((Nemo.origine.y>hauteurJeu-Nemo.hauteur) || (Nemo.origine.x+Nemo.largeur>=largeurJeu)
 		 || ((int)(pNourriture)==0) || (((int)(Nemo.origine.x+Nemo.largeur)>=(int)(3.5/5.0*largeurJeu))&&((int)(Nemo.origine.y+Nemo.hauteur)>=(int)(4.5/5.0*hauteurJeu)))
-		 || toucheRequin ){ //si le niveau n'a pas été réussi ou qu'on a touché un trou noir
+		 || toucheRequin ){ //si le niveau n'a pas été réussi ou qu'on a touché un requin
 			
 			
-			//lancement du niveau (le même que précedamment sauf si l'utilisateur a touché un trou noir
+			//lancement du niveau (le même que précedamment
 			
 			niveau(numNiveau);
 			
@@ -613,7 +502,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 	}
    
    /**
-   * \fn void WinOrLose() : méthode permettant de relancer le jeu et de recommencer au début
+   * \fn void restart() : méthode permettant de relancer le jeu et de recommencer au début
    */
 	public void restart(){
 		mt.stop();
@@ -646,11 +535,3 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
        return null;
     }   
     }
-		
-
-		
-		
-
-		
-		
-		
