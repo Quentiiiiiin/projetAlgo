@@ -1,8 +1,8 @@
 import javax.swing.*; //fenêtre
 import java.awt.*; //couleur
 import java.awt.event.*; //événements
-import java.io.*; //images
-import javax.imageio.*; //BufferedImage
+import java.io.*; 
+import javax.imageio.*; 
 
 /**
  * \class FenetreChoix : fenêtre permettant de choisir le poisson avec lequel l'utilisateur veut jouer  
@@ -58,7 +58,6 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
     //<!poisson choisi
     private Poisson poissonChoisi;
     
-<<<<<<< HEAD
     //<!fond sonore
     // private Audio a = new Audio("audio/choixRover.wav");
     
@@ -71,15 +70,12 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
     // //<!son du bouton choix si un rover a été sélectionné
     // private Audio aStart = new Audio("audio/bouton.wav"); 
     
-=======
-
->>>>>>> 23d6e69f9178e6136024afedc26efc65373006e8
     /**
    * \fn FenetreChoix(boolean b) : constructeur FenetreChoix
    * 
    * @param boolean b : booléen indiquant si le son était allumé ou non dans la fenêtre start
    */ 
-    public FenetreChoix () throws IOException{
+    public FenetreChoix (boolean b) throws IOException{
 		
 		// audioOn=b;
 		
@@ -208,14 +204,6 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
 
 
 
-
-
-
-
-
-
-
-
         
 		//initialisation des poissons
         
@@ -228,16 +216,12 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         this.setVisible(true);
     
     }
-    
-    /**
-   * \fn void actionPerformed(ActionEvent e) : méthode permettant de lancer le jeu si
-   * l'utilisateur appuie sur le bouton de choix ou de couper le son si il appuie sur le bouton correspondant
-   * 
+
+   /* 
    * @param ActionEvent e : événement associé
    */ 
     public void actionPerformed (ActionEvent e){ 
 		
-
 
 	//le poisson sélectionné est enregistré
 
@@ -273,10 +257,6 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         if(e.getSource()==Choisir){
             if(poissonChoisi!=null){ //si l'utilisateur a choisi un poisson
 				try{
-<<<<<<< HEAD
-=======
-
->>>>>>> 23d6e69f9178e6136024afedc26efc65373006e8
 					new FenetreJeu(poissonChoisi); //création de la fenêtre principale de jeu
 
 
@@ -288,48 +268,13 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
 					setVisible(false);
 				}catch(IOException exception){
 				}
-			}else{ //si l'utilisateur n'a choisi aucun poisson
-
+			}else{ 
 				JOptionPane.showMessageDialog(this,"Veuillez s\u00e9lectionner un poisson !"); //message d'erreur
 			}
         }
     
     }
-<<<<<<< HEAD
-=======
-    
 
 
 
 
-
-
-
-
-
-    /**
-   * \fn static String readFile(String chemin) : méthode permettant de convertir des fichiers texte en String en conservant la présentation du texte
-   * 
-   * @param String chemin : localisation du fichier à convertir
-   */ 
-    public static String readFile(String chemin) {
-        try{
-            InputStream flux= new FileInputStream(chemin);
-            InputStreamReader lecture= new InputStreamReader(flux,"UTF-8");
-            try (BufferedReader buff = new BufferedReader(lecture)) {
-                String ligne = "";
-                String contenu = "";
-                while ((ligne = buff.readLine()) != null){
-                    contenu += ligne + "\n";
-                }
-                return contenu;
-            } catch (Exception e) {
-                System.out.println(e.toString());
-            }
-       } catch (IOException e){
-            System.out.println(e.toString());
-       }
-       return null;
-    }   
-}
->>>>>>> 23d6e69f9178e6136024afedc26efc65373006e8
