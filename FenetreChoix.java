@@ -87,23 +87,23 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         NomJeu.setForeground(new Color(249,200,93));
         Fond.add(NomJeu);
        
-        JLabel A = new JLabel(new ImageIcon("IMAGE POISSON FLORENT"));
+        JLabel A = new JLabel(new ImageIcon("images/Dory.png"));
         A.setBounds(100,90,200,200);
         Fond.add(A);
         
-        JLabel B = new JLabel(new ImageIcon("IMAGE POISSON LOUIS"));
+        JLabel B = new JLabel(new ImageIcon("images/nourriture1.png"));
         B.setBounds(400,90,200,200);
         Fond.add(B);
         
-        JLabel C = new JLabel(new ImageIcon("IMAGE POISSON QUENTIN"));
+        JLabel C = new JLabel(new ImageIcon("images/nourriture1.png"));
         C.setBounds(100,390,200,200);
         Fond.add(C);
         
-        JLabel D = new JLabel(new ImageIcon("IMAGE POISSON TEQUEL"));
+        JLabel D = new JLabel(new ImageIcon("images/nourriture1.png"));
         D.setBounds(400,390,200,200);
         Fond.add(D);
         
-        JLabel E = new JLabel(new ImageIcon("IMAGE POISSON DORY"));
+        JLabel E = new JLabel(new ImageIcon("images/nourriture1.png"));
         E.setBounds(250,690,200,200);
         Fond.add(E);
         
@@ -174,10 +174,10 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         
 		//initialisation des poissons
         
-        Florent = new Poisson(ImageIO.read(new File("images/Florent.png")),"texte/Forent.txt");
-        Louis = new Poisson(ImageIO.read(new File("images/Louis.png")),"texte/Louis.txt");
-        Quentin = new Poisson(ImageIO.read(new File("images/Quentin.png")),"texte/Quentin.txt");
-        Tequel = new Poisson(ImageIO.read(new File("images/Tequel.png")),"texte/Tequel.txt");
+        Florent = new Poisson(ImageIO.read(new File("images/Dory.png")),"texte/Forent.txt");
+        Louis = new Poisson(ImageIO.read(new File("images/Dory.png")),"texte/Louis.txt");
+        Quentin = new Poisson(ImageIO.read(new File("images/Dory.png")),"texte/Quentin.txt");
+        Tequel = new Poisson(ImageIO.read(new File("images/Dory.png")),"texte/Tequel.txt");
         Dory = new Poisson(ImageIO.read(new File("images/Dory.png")),"texte/Dory.txt");
               
         this.setVisible(true);
@@ -239,8 +239,8 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         /**
    * \fn static String readFile(String chemin) : méthode permettant de convertir des fichiers texte en String en conservant la présentation du texte
    * 
-   * @param String chemin : localisation du fichier à convertir
-   */ 
+//    * @param String chemin : localisation du fichier à convertir
+//    */ 
 	 public static String readFile(String chemin) {
         try{
             InputStream flux= new FileInputStream(chemin);
@@ -260,8 +260,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
        }
        return null;
     }
-    
-    }
+ }
 
 
 
