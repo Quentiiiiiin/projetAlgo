@@ -59,7 +59,6 @@ public class FenetreLose extends JFrame implements ActionListener{
 			
 		//ajout des éléments + affichage de la fenêtre de défaite
 		
-		loose.lecture();
 		Phrase.setText("T'as tué Nemo super sympa de ta part");
 		Fond.setBackground(new Color(236,134,131));
 		Gif.setIcon(new ImageIcon("GIF POISSON QUI REMONTE A LA SURFACE"));  //images/explosion.gif
@@ -76,8 +75,7 @@ public class FenetreLose extends JFrame implements ActionListener{
    * @param ActionEvent e : événement associé
    */
     public void actionPerformed(ActionEvent e){
-		//la fenêtre de défaite de ferme, le jeu redémarre
-		Restart.lecture();
+		//la fenêtre de défaite se ferme, le jeu redémarre
 		f.restart();
 		this.setVisible(false);
 	}
