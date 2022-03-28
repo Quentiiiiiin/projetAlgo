@@ -77,7 +77,7 @@ public class FenetreLose extends JFrame implements ActionListener{
    */
     public void actionPerformed(ActionEvent e){
 		//la fenêtre de défaite de ferme, le jeu redémarre
-		restart.lecture();
+		Restart.lecture();
 		f.restart();
 		this.setVisible(false);
 	}
