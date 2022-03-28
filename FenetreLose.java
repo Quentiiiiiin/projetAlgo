@@ -23,7 +23,7 @@ public class FenetreLose extends JFrame implements ActionListener{
 		
 		//création de la fenêtre de défaite
 		
-        this.setTitle("R\u00e9sultat");  //("R\u00e9sultat");
+        this.setTitle("R\u00e9sultat");  //("Résultat");
 		this.setSize(600,400);
 		this.setLocation(450,400);
 		this.setResizable(false);
@@ -61,7 +61,7 @@ public class FenetreLose extends JFrame implements ActionListener{
 		
 		Phrase.setText("T'as tué Nemo super sympa de ta part");
 		Fond.setBackground(new Color(236,134,131));
-		Gif.setIcon(new ImageIcon("GIF POISSON QUI REMONTE A LA SURFACE"));  //images/explosion.gif
+		Gif.setIcon(new ImageIcon("GIF POISSON QUI REMONTE A LA SURFACE"));  //image
 		Fond.add(Phrase);
 		Fond.add(Restart);
 		Fond.add(Gif);
