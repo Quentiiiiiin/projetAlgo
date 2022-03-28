@@ -145,7 +145,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
 	    Dodo.setBackground(new Color(247,198,197));
         Dodo.addActionListener(this); 
         Dodo.setFont(new Font("Agency FB",Font.BOLD,25));
-        Dodo.add(Dodo);
+        Fond.add(Dodo);
         
         Choisir = new JButton("CHOISIR");
 		Choisir.setLayout(null);
