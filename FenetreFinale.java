@@ -117,7 +117,7 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
    */
 	public void mouseEntered(MouseEvent e){
 		if(e.getSource() == Info){
-			//new FenetreInfo(); //création de la fenêtre info
+			new FenetreInfo(); //création de la fenêtre info
 		}
 	}
 	
