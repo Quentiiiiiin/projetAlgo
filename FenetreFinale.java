@@ -66,7 +66,7 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
         Restart.setBackground(new Color(206,206,206)); 
         Gif.add(Restart);
        
-        String T = readFile("description.txt");
+        String T = readFile("texte/description.txt");
         JTextArea Texte = new JTextArea(T);
         Texte.setBackground(new Color(206,206,206)); 
         Texte.setForeground(new Color(0,127,255));  
