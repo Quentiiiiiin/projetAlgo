@@ -272,6 +272,31 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
 				JOptionPane.showMessageDialog(this,"Veuillez s\u00e9lectionner un poisson !"); //message d'erreur
 			}
         }
+        }
+        /**
+   * \fn static String readFile(String chemin) : méthode permettant de convertir des fichiers texte en String en conservant la présentation du texte
+   * 
+   * @param String chemin : localisation du fichier à convertir
+   */ 
+	 public static String readFile(String chemin) {
+        try{
+            InputStream flux= new FileInputStream(chemin);
+            InputStreamReader lecture= new InputStreamReader(flux,"UTF-8");
+            try (BufferedReader buff = new BufferedReader(lecture)) {
+                String ligne = "";
+                String contenu = "";
+                while ((ligne = buff.readLine()) != null){
+                    contenu += ligne + "\n";
+                }
+                return contenu;
+            } catch (Exception e) {
+                System.out.println(e.toString());
+            }
+       } catch (IOException e){
+            System.out.println(e.toString());
+       }
+       return null;
+    }
     
     }
 
