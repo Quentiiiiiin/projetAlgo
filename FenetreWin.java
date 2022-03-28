@@ -67,10 +67,7 @@ public class FenetreWin extends JFrame implements ActionListener{
         repaint();
         if(y==300){ //on s'arrête à un certain point
 			time.stop();
-			try{
-				new FenetreFinale(fenetre); //création de la fenêtre finale
-            }catch(IOException exception){
-            }
+			new FenetreFinale(fenetre); //création de la fenêtre finale
             this.setVisible(false);
         }
     }
