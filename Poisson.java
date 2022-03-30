@@ -29,7 +29,7 @@ public class Poisson{
 		image = i;
 		hauteur = 100;
 		largeur = 100;
-		origine = new APoint(0,700);
+		origine = new APoint(0,350);
 	}
 	
 	/**
@@ -44,8 +44,8 @@ public class Poisson{
    */ 
 	public void ChangePosition(int courantX, int courantY, int vitesseI, int angleI, double t, double viscosite){//méthode effectuant le changement de la position du poisson en fonction du temps et des paramètres du niveau en cours
 				
-        origine.x = 0*viscosite*courantX*Math.pow(t,2) + vitesseI * Math.cos (Math.toRadians(angleI))*t + 0;
-        origine.y = viscosite*courantY*Math.pow(t,2) - vitesseI * Math.sin (Math.toRadians(angleI))*t + 700;
+        origine.x = 1/viscosite*(courantX*Math.pow(t,2) + vitesseI * Math.cos (Math.toRadians(angleI))*t) + 0;
+        origine.y = 1/viscosite*(courantY*Math.pow(t,2) - vitesseI * Math.sin (Math.toRadians(angleI))*t) + 350;
         
 	}	
 }
