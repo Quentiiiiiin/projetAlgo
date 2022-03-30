@@ -46,7 +46,11 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 	private JLabel AngleI;
 	
 	//<!zone d'affichage du courant présent sur le niveau
-	private JLabel Courant;
+	private JLabel CourantX;
+
+	//<!zone d'affichage du courant présent sur le niveau
+	private JLabel CourantY;
+
 	
 	//<!zone d'affichage de la gravité présente sur le niveau
     private JLabel Viscosite;
@@ -180,17 +184,25 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
         AngleI.setFont(new Font("Agency FB",Font.BOLD, 19));
         
                 
-        Courant = new JLabel();
-        Courant.setLayout(null);
-        Courant.setBounds((int)(5.0/99.0*1500),
+        CourantX = new JLabel();
+        CourantX.setLayout(null);
+        CourantX.setBounds((int)(5.0/99.0*1500),
         (int)(0.50/21.0*1000)+20,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
-        Courant.setForeground(new Color(249,200,93));
-        Courant.setFont(new Font("Agency FB",Font.BOLD,35));
-        
+        CourantX.setForeground(new Color(249,200,93));
+        CourantX.setFont(new Font("Agency FB",Font.BOLD,35));
+
+		CourantY = new JLabel();
+        CourantY.setLayout(null);
+        CourantY.setBounds((int)(5.0/99.0*1500),
+        (int)(0.50/21.0*1000)-20,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
+        CourantY.setForeground(new Color(249,200,93));
+        CourantY.setFont(new Font("Agency FB",Font.BOLD,35));
+
+
         Viscosite = new JLabel();
         Viscosite.setLayout(null);
         Viscosite.setBounds((int)(5.0/99.0*1500),
-        (int)(0.50/21.0*1000)-20,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
+        (int)(0.50/21.0*1000)-60,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
         Viscosite.setForeground(new Color(249,200,93));
         Viscosite.setFont(new Font("Agency FB",Font.BOLD,35));
                
@@ -247,7 +259,8 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		panneauGlobal.add(VitesseI);
 		panneauGlobal.add(Angle);
 		panneauGlobal.add(AngleI);
-		panneauGlobal.add(Courant);
+		panneauGlobal.add(CourantX);
+		panneauGlobal.add(CourantY);
         panneauGlobal.add(Viscosite);
 		panneauGlobal.add(Nourri);
 		panneauGlobal.add(currentNourriture);
@@ -310,10 +323,17 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 
 
 		if(cX>=0){
-			Courant.setText("Courant en X : "+"+"+cX);
+			CourantX.setText("Courant en X : "+"+"+cX);
 		}else if(cX<0){
-			Courant.setText("Courant en X : "+cX);
+			CourantX.setText("Courant en X : "+cX);
 		}
+
+		if(cY>=0){
+			CourantY.setText("Courant en Y : "+"+"+cY);
+		}else if(cY<0){
+			CourantY.setText("Courant en Y : "+cY);
+		}
+
         Viscosite.setText("Viscosité : "+viscosite);
 		Titre.setText("NEMO Niveau "+ numNiveau);
 	}

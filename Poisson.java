@@ -44,8 +44,8 @@ public class Poisson{
    */ 
 	public void ChangePosition(int courantX, int courantY, int vitesseI, int angleI, double t, double viscosite){//méthode effectuant le changement de la position du poisson en fonction du temps et des paramètres du niveau en cours
 				
-        origine.x = viscosite*courantX*Math.pow(t,2) + vitesseI * Math.cos (Math.toRadians(angleI)) + 0;
-        origine.y = viscosite*courantY*Math.pow(t,2) - vitesseI * Math.sin (Math.toRadians(angleI)) + 700;
+        origine.x = 0*viscosite*courantX*Math.pow(t,2) + vitesseI * Math.cos (Math.toRadians(angleI))*t + 0;
+        origine.y = viscosite*courantY*Math.pow(t,2) - vitesseI * Math.sin (Math.toRadians(angleI))*t + 700;
         
 	}	
 }
