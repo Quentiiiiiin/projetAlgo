@@ -442,7 +442,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 			
 			AffJeu.toucherNourriture=false;
 			AffJeu.affiche=true;
-			Nemo.origine = new APoint(0,833-100);
+			Nemo.origine = new APoint(0,350);
 			Angle.setValue(45);
 			Vitesse.setValue(50);
 			aI = Angle.getValue();
@@ -484,7 +484,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 			
 			AffJeu.toucherNourriture=false;
 			AffJeu.affiche=true;
-			Nemo.origine = new APoint(0,833-100);
+			Nemo.origine = new APoint(0,350);
 			Angle.setValue(45);
 		    Vitesse.setValue(50);
 		    aI = Angle.getValue();
