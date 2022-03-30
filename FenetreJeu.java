@@ -217,7 +217,6 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		Contour.setBackground(new Color(249,200,93));
 		
 		//Initialisation et placement initial des composants graphiques
-		
 		Nemo = r;
 		AffJeu = new AffichageJeu(this);
 		AffJeu.setLayout(null);
@@ -268,7 +267,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		
 		//le jeu peut commencer
 		
-		// debutJeu();
+		 debutJeu();
 	}
 
 	/**
@@ -287,7 +286,6 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 	public void niveau(int i){
 		
 		//boucles contenant toutes les caractéristiques physiques propres à chaque niveau et mettant à jour l'affichage de la fenêtre pour chacun d'entre eux
-		
 		if(i==1){
 			viscosite = 2.0;
 			cX =(int) (1+2*Math.random()-1);

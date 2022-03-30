@@ -2,7 +2,7 @@ import javax.swing.*; //graphique
 import java.awt.*; //couleurs
 import java.io.*; //File
 import javax.imageio.*; //images
-	import java.awt.image.*; //bufferedImage
+import java.awt.image.*; //bufferedImage
 
 /**
  * \class AffichageJeu : zone de jeu graphique
