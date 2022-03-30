@@ -29,7 +29,7 @@ public class Poisson{
 		image = i;
 		hauteur = 100;
 		largeur = 100;
-		origine = new APoint(0,0);
+		origine = new APoint(0,700);
 	}
 	
 	/**
