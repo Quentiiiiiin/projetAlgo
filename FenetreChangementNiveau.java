@@ -52,7 +52,7 @@ public class FenetreChangementNiveau extends JFrame implements ActionListener{
     }
     
     /**
-   * \fn void paint(Graphics g) : méthode gérant l'affichage raphique de la fenêtre
+   * \fn void paint(Graphics g) : méthode gérant l'affichage graphique de la fenêtre
    * 
    * @param Graphics g : objet graphique d'affichage
    */ 
