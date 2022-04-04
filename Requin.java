@@ -16,7 +16,7 @@ public class Requin extends ElementMarin{
 	public Requin(FenetreJeu f) throws IOException{ 
 		
 		super(f);
-		image = ImageIO.read(new File("images/REQUIN2RUE.png"));
+		image = ImageIO.read(new File("images/Requin.png"));
 	}
 	
 	/**
