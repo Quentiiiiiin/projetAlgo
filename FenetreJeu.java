@@ -164,12 +164,12 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
         VitesseI.setForeground(new Color(249,200,93));
         VitesseI.setFont(new Font("Agency FB",Font.BOLD, 19));
                
-        Angle = new JSlider(0,90,45);
+        Angle = new JSlider(-90,90,0);
         aI=Angle.getValue();
         Angle.setLayout(null);
         Angle.setBounds((int)(5.0/99.0*1500),
         (int)(7.0/21.0*1000),(int)(40.0/297.0*1500),(int)(2.0/21.0*1000));
-        Angle.setMajorTickSpacing(15);
+        Angle.setMajorTickSpacing(45);
         Angle.setPaintTicks(true);
         Angle.setPaintLabels(true);
         Angle.setBackground(new Color(52,62,162));
@@ -301,8 +301,8 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		//boucles contenant toutes les caractéristiques physiques propres à chaque niveau et mettant à jour l'affichage de la fenêtre pour chacun d'entre eux
 		if(i==1){
 			viscosite = 2.0;
-			cX =(int) (1+2*Math.random()-1);
-			cY =(int) (1+2*Math.random()-1);
+			cX =(int) (1+8*Math.random()-1);
+			cY =(int) (1+8*Math.random()-1);
 		}else if(i==2){
 			viscosite = 2.25;
 			cX =(int)(1+4*Math.random()-2);

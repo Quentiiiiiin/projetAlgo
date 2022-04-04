@@ -93,7 +93,7 @@ public class AffichageJeu extends JPanel{
 			g.setColor(new Color(255,0,0));
 			for(int i=0;i<10;i++){
 				g.drawOval((int)(f.vI*Math.cos(Math.toRadians(f.aI))*(i+1)+f.Nemo.largeur),
-				(int)(f.viscosite*Math.pow(i+1,2)-f.vI*Math.sin(Math.toRadians(f.aI))*(i+1)+833-f.Nemo.hauteur),
+				(int)(f.viscosite*Math.pow(i+1,2)-f.vI*Math.sin(Math.toRadians(f.aI))*(i+1)+450-f.Nemo.hauteur),
 				5,5);
 			}
 		}
