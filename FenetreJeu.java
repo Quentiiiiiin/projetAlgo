@@ -68,10 +68,10 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 	int aI;
 	
 	//<!courant en X présent sur le niveau en cours
-	private int cY;
+	public int cY;
 
 	//<!courant en Y présent sur le niveau en cours
-	private int cX;
+	public int cX;
 	
 	//<!pourcentage de nourriture restant au poisson
 	double pNourriture=100.0;
@@ -301,8 +301,8 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		//boucles contenant toutes les caractéristiques physiques propres à chaque niveau et mettant à jour l'affichage de la fenêtre pour chacun d'entre eux
 		if(i==1){
 			viscosite = 2.0;
-			cX =(int) (1+8*Math.random()-1);
-			cY =(int) (1+8*Math.random()-1);
+			cX =(int) (Math.random()*6-3);
+			cY =(int) (Math.random()*6-3);
 		}else if(i==2){
 			viscosite = 2.25;
 			cX =(int)(1+4*Math.random()-2);
