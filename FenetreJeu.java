@@ -417,8 +417,8 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
    */ 
     public void niveauTermine() {
 		
-		if((int)(Nemo.origine.y)<=(int)(4.5/5.0*hauteurJeu-Nemo.hauteur+10) &&
-		(int)(Nemo.origine.y)>=(int)(4.5/5.0*hauteurJeu-Nemo.hauteur)
+		if((int)(Nemo.origine.y)<=(int)(2.5/5.0*hauteurJeu-Nemo.hauteur+10) &&
+		(int)(Nemo.origine.y)>=(int)(2.5/5.0*hauteurJeu-Nemo.hauteur)
 		 && (Nemo.origine.x>=3.5/5.0*largeurJeu-Nemo.largeur) 
 		 && Nemo.origine.x<=3.5/5.0*largeurJeu+1.5/5.0*largeurJeu){ //si le niveau a été réussit
 

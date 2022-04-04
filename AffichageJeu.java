@@ -35,6 +35,8 @@ public class AffichageJeu extends JPanel{
 	
 	//<!image de fond de la zone de jeu
 	private BufferedImage fondMarin;
+
+	private BufferedImage eauPropre;
 	/**
    * \fn AffichageJeu(FenetreJeu f) : constructeur AffichageJeu
    * 
@@ -44,6 +46,7 @@ public class AffichageJeu extends JPanel{
 		
 		this.f=f;
 		fondMarin= ImageIO.read(new File("images/eauPolluée.jpg")); //l'image de fond ne peut pas être créée dans la méthode paint (trop de ralentissement créé par la boucle try catch
+		eauPropre = ImageIO.read(new File("images/eauPropre.png")); // Image de l'eau propre
 		
 		//initialisation des tableaux d'objets
 		
@@ -83,7 +86,8 @@ public class AffichageJeu extends JPanel{
 		
 		g.drawImage(fondMarin,0,0,(int)(20.0/27.0*1500),(int)(5.0/6.0*1000),null);
 		g.setColor(new Color(0,127,255));
-		g.fillRect((int)(3.5/5.0*f.largeurJeu),(int)(4.5/5.0*f.hauteurJeu),(int)(1.5/5.0*f.largeurJeu),(int)(0.2/5.0*f.hauteurJeu));
+		g.drawImage (eauPropre, (int)(3.5/5.0*f.largeurJeu), (int)(2.5/5.0*f.hauteurJeu), (int)(1.5/5.0*f.largeurJeu), (int)(0.4/2.0*f.hauteurJeu), null);
+		//g.fillRect((int)(3.5/5.0*f.largeurJeu),(int)(4.5/5.0*f.hauteurJeu),(int)(1.5/5.0*f.largeurJeu),(int)(0.2/5.0*f.hauteurJeu));
 		g.drawImage(f.Nemo.image,(int)(f.Nemo.origine.x),(int)(f.Nemo.origine.y),f.Nemo.largeur,f.Nemo.hauteur,null);
 		
 		if(!f.enJeu){ //si l'utilisateur n'est pas en jeu
