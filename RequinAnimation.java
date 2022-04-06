@@ -16,8 +16,8 @@ public class RequinAnimation extends JFrame implements ActionListener{
     //<!image du fond de la fenêtre
     private BufferedImage fond;
     
-    //<!image de l'explosion
-    private BufferedImage Explosion;
+    //<!image de l'attaque
+    private BufferedImage Attaque;
     
     //<!abscisse du poisson
     private int x =0;
@@ -51,7 +51,7 @@ public class RequinAnimation extends JFrame implements ActionListener{
         
         //initialisation des composants
         
-        Explosion = ImageIO.read(new File("images/explosion.gif"));
+        Attaque = ImageIO.read(new File("images/attaqueRequin.png"));
         fond = ImageIO.read(new File("images/REQUIN2RUE.png"));
         this.setVisible(true);
     }
@@ -63,7 +63,7 @@ public class RequinAnimation extends JFrame implements ActionListener{
    */
     public void actionPerformed (ActionEvent e){
 		if(isShowing()){ //si la fenêtre est affichée
-			x=x+3;
+			x+=3;
 			if(x==699){ //l'animation est terminée
 				time.stop();
 				this.setVisible(false);
@@ -88,16 +88,9 @@ public class RequinAnimation extends JFrame implements ActionListener{
    * @param Graphics g : objet graphique d'affichage
    */ 
     public void paint(Graphics g){
-        g.drawImage(fond,0,0,1111,833,null);
-        
-        if(x<=400){ //dessin du poisson
-        g.drawImage(fenetre.Nemo.image,x,350,200,200,null);
-        repaint();
-        }
-        
-        if(x>400){ //dessin de l'explosion quand le robot touche la météorite
-            g.drawImage(Explosion,0,0,1111,833,null);
-        }
+
+        g.drawImage(Attaque,0,0,1111,833,null);
+    
     }
    
     
