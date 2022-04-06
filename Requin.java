@@ -23,6 +23,13 @@ public class Requin extends ElementMarin{
    * \fn void action() : méthode gérant le contact entre le requin et nemo
    */
 	public void action(){
-		f.toucheRequin = true; //le booléen gérant le contact requin dans la fenêtre jeu devient true
+		f.toucheRequin = true;  //le booléen gérant le contact requin dans la fenêtre jeu devient true
+		
+		if(f.pNourriture>15.0){
+			try{
+				new RequinAnimation(f); //lancement de l'animation météorite
+			}catch(IOException Exception){
+			}
+		}
 	}
 }

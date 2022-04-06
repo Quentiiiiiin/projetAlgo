@@ -456,7 +456,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		 || toucheRequin ){ //si le niveau n'a pas été réussi ou qu'on a touché un requin
 			
 			
-			//lancement du niveau (le même que précedamment
+			//lancement du niveau (le même que précedamment)
 			
 			niveau(numNiveau);
 			
