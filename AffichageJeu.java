@@ -86,7 +86,7 @@ public class AffichageJeu extends JPanel{
 		
 		g.drawImage(fondMarin,0,0,(int)(20.0/27.0*1500),(int)(5.0/6.0*1000),null);
 		g.setColor(new Color(0,127,255));
-		g.drawImage (eauPropre, (int)(3.5/5.0*f.largeurJeu), (int)(2.5/5.0*f.hauteurJeu), (int)(1.5/5.0*f.largeurJeu), (int)(0.4/2.0*f.hauteurJeu), null);
+		g.drawImage (eauPropre, (int)(3.5/5.0*f.largeurJeu), (int)(2.5/5.0*f.hauteurJeu), (int)(1.5/5.0*f.largeurJeu), (int)(0.4/1.5*f.hauteurJeu), null);
 		//g.fillRect((int)(3.5/5.0*f.largeurJeu),(int)(4.5/5.0*f.hauteurJeu),(int)(1.5/5.0*f.largeurJeu),(int)(0.2/5.0*f.hauteurJeu));
 		g.drawImage(f.Nemo.image,(int)(f.Nemo.origine.x),(int)(f.Nemo.origine.y),f.Nemo.largeur,f.Nemo.hauteur,null);
 		
