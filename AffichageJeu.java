@@ -108,7 +108,7 @@ public class AffichageJeu extends JPanel{
 		
 		if(f.numNiveau==1){
 			o1[0].origine = new APoint(500.0,550.0);
-			o1[1].origine = new APoint(200.0,300.0);
+			o1[1].origine = new APoint(300.0,100.0);
 			o1[2].origine = new APoint(800.0,200.0);
 
 			for(int i=0;i<o1.length;i++){
