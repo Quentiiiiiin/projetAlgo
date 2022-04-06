@@ -91,7 +91,7 @@ public class RequinAnimation extends JFrame implements ActionListener{
         g.drawImage(fond,0,0,1111,833,null);
         
         if(x<=400){ //dessin du poisson
-        g.drawImage(fenetre.Nemo,x,350,200,200,null);
+        g.drawImage(fenetre.Nemo.image,x,350,200,200,null);
         repaint();
         }
         
