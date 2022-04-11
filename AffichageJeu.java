@@ -153,7 +153,7 @@ public class AffichageJeu extends JPanel{
 			o4[0].origine = new APoint(450.0,400.0);
 			o4[1].origine = new APoint(350.0,200.0);
 			o4[2].origine = new APoint(600.0,350.0);
-            o4[3].origine = new APoint(800.0,500.0);
+            o4[3].origine = new APoint(600.0,570.0);
             o4[4].origine = new APoint(350.0,600.0);
 			for(int i=0;i<o4.length;i++){
 				if(o4[i] instanceof Nourriture){
@@ -171,7 +171,7 @@ public class AffichageJeu extends JPanel{
 			o5[2].origine = new APoint(300.0,350.0);
             o5[3].origine = new APoint(400.0,170.0);
             o5[4].origine = new APoint(500.0,125.0);
-            o5[5].origine = new APoint(875.0,650.0);
+            o5[5].origine = new APoint(875.0,250.0);
 			for(int i=0;i<o5.length;i++){
 				if(o5[i] instanceof Nourriture){
 					if(affiche){ 
