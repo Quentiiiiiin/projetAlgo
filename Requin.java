@@ -27,7 +27,7 @@ public class Requin extends ElementMarin{
 		
 		if(f.pNourriture>15.0){
 			try{
-				new RequinAnimation(f); //lancement de l'animation météorite
+				new RequinAnimation(f); //lancement de l'animation poisson mangé
 			}catch(IOException Exception){
 			}
 		}
