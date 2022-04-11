@@ -120,9 +120,9 @@ public class AffichageJeu extends JPanel{
 			}
 			toucheElementMarin(o1);
 		}else if(f.numNiveau==2){
-			o2[0].origine = new APoint(400.0,300.0);
-			o2[1].origine = new APoint(300.0,550.0);
-			o2[2].origine = new APoint(600.0,500.0);
+			o2[0].origine = new APoint(400.0,250.0);
+			o2[1].origine = new APoint(300.0,350.0);
+			o2[2].origine = new APoint(800.0,300.0);
 
 			for(int i=0;i<o2.length;i++){
 				if(o2[i] instanceof Nourriture){
@@ -138,7 +138,7 @@ public class AffichageJeu extends JPanel{
 			o3[0].origine = new APoint(500.0,300.0);
 			o3[1].origine = new APoint(300.0,350.0);
 			o3[2].origine = new APoint(450.0,600.0);
-            o3[3].origine = new APoint(700.0,100.0);
+            o3[3].origine = new APoint(700.0,170.0);
 			for(int i=0;i<o3.length;i++){
 				if(o3[i] instanceof Nourriture){
 					if(affiche){ 
@@ -168,10 +168,10 @@ public class AffichageJeu extends JPanel{
 		}else if(f.numNiveau==5){
 			o5[0].origine = new APoint(600.0,325.0);
 			o5[1].origine = new APoint(300.0,650.0);
-			o5[2].origine = new APoint(100.0,350.0);
-            o5[3].origine = new APoint(450.0,500.0);
+			o5[2].origine = new APoint(300.0,350.0);
+            o5[3].origine = new APoint(400.0,170.0);
             o5[4].origine = new APoint(500.0,125.0);
-            o5[5].origine = new APoint(875.0,450.0);
+            o5[5].origine = new APoint(875.0,650.0);
 			for(int i=0;i<o5.length;i++){
 				if(o5[i] instanceof Nourriture){
 					if(affiche){ 
