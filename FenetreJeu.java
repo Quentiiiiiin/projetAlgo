@@ -30,9 +30,6 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 	//<!zone de couleur or autour de la partie graphique du jeu
 	private JPanel Contour;
 	
-	//<!plateforme d'arrivée
-	private JPanel Plateforme;
-	
 	//<!curseur de défilement permettant de régler la vitesse initiale du poisson
 	private JSlider Vitesse;
 	
@@ -301,24 +298,34 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		//boucles contenant toutes les caractéristiques physiques propres à chaque niveau et mettant à jour l'affichage de la fenêtre pour chacun d'entre eux
 		if(i==1){
 			viscosite = 2.0;
-			cX =(int) (Math.random()*6-3);
-			cY =(int) (Math.random()*6-3);
+			cX =(int) (Math.random()*10-5);
+			while (cY == 0){
+				cY =(int) (Math.random()*10-5);
+			}
 		}else if(i==2){
 			viscosite = 2.25;
-			cX =(int)(1+4*Math.random()-2);
-			cY =(int) (1+2*Math.random()-2);
+			cX =(int) (Math.random()*10-5);
+			while (cY == 0){
+				cY =(int) (Math.random()*10-5);
+			}
 		}else if(i==3){
 			viscosite = 2.75;
-			cX =(int)(1+6*Math.random()-3);
-			cY =(int) (1+2*Math.random()-3);
+			cX =(int) (Math.random()*10-5);
+			while (cY == 0){
+				cY =(int) (Math.random()*10-5);
+			}
 		}else if(i==4){
 			viscosite = 3.0;
-			cX =(int)(1+8*Math.random()-4);
-			cY =(int) (1+2*Math.random()-4);
+			cX =(int) (Math.random()*10-5);
+			while (cY == 0){
+				cY =(int) (Math.random()*10-5);
+			}
 		}else if(i==5){
 			viscosite= 3.25;
-			cX =(int)(1+10*Math.random()-5);
-			cY =(int) (1+2*Math.random()-5);
+			cX =(int) (Math.random()*10-5);
+			while (cY == 0){
+				cY =(int) (Math.random()*10-5);
+			}
 		}
 
 
