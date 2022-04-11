@@ -99,16 +99,13 @@ public class AffichageJeu extends JPanel{
 				g.drawOval((int)(1/f.viscosite*(f.cX*Math.pow(i+1,2) + f.vI * Math.cos (Math.toRadians(f.aI))*(i+1)) + f.Nemo.largeur),
 				(int)(1/f.viscosite*(-f.cY*Math.pow(i+1,2) - f.vI * Math.sin (Math.toRadians(f.aI))*(i+1)) + 400),
 				5,5);
-				// g.drawOval((int)(f.vI*Math.cos(Math.toRadians(f.aI))*(i+1)+f.Nemo.largeur),
-				// (int)(f.viscosite*Math.pow(i+1,2)-f.vI*Math.sin(Math.toRadians(f.aI))*(i+1)+450-f.Nemo.hauteur),
-				// 5,5);
 			}
 		}
 		//dessins propres à chaque f.numNiveau
 		
 		if(f.numNiveau==1){
 			o1[0].origine = new APoint(500.0,550.0);
-			o1[1].origine = new APoint(300.0,100.0);
+			o1[1].origine = new APoint(300.0,400.0);
 			o1[2].origine = new APoint(800.0,200.0);
 
 			for(int i=0;i<o1.length;i++){
