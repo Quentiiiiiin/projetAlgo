@@ -95,9 +95,9 @@ public class AffichageJeu extends JPanel{
 		//dessin des points donnant à l'utilisateur une idée de la courbe suivie par le poisson (cette courbe ne prend pas le courant en compte volontairement)
 		
 			g.setColor(new Color(200,200,200));
-			for(int i=0;i<10;i++){
-				g.drawOval((int)(1/f.viscosite*(f.cX*Math.pow(i+1,2) + f.vI * Math.cos (Math.toRadians(f.aI))*(i+1)) + f.Nemo.largeur),
-				(int)(1/f.viscosite*(-f.cY*Math.pow(i+1,2) - f.vI * Math.sin (Math.toRadians(f.aI))*(i+1)) + 400),
+			for(int i=0;i<8;i++){
+				g.drawOval((int)(1/f.viscosite*(0.1*f.cX*Math.pow(i+1,2) + 5*f.vI * Math.cos (Math.toRadians(f.aI))*(i+1)) + f.Nemo.largeur),
+				(int)(1/f.viscosite*(-f.cY*Math.pow(i+1,2) - 10*f.vI * Math.sin (Math.toRadians(f.aI))*(i+1)) + 400),
 				5,5);
 			}
 		}

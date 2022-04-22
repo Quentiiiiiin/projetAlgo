@@ -143,12 +143,12 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
         Titre.setForeground(new Color(249,200,93));
         Titre.setFont(new Font("Agency FB",Font.BOLD,65));
               
-        Vitesse = new JSlider(0,100,50);
+        Vitesse = new JSlider(0,20,10);
         vI=Vitesse.getValue();
         Vitesse.setLayout(null);
         Vitesse.setBounds((int)(5.0/99.0*1500),
         (int)(3.5/21.0*1000),(int)(40.0/297.0*1500),(int)(2.0/21.0*1000));
-        Vitesse.setMajorTickSpacing(25);
+        Vitesse.setMajorTickSpacing(5);
         Vitesse.setPaintTicks(true);
         Vitesse.setPaintLabels(true);
         Vitesse.setBackground(new Color(52,62,162));
