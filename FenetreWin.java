@@ -39,7 +39,7 @@ public class FenetreWin extends JFrame implements ActionListener{
 		//initialisation de la fenêtre
 		
 		fenetre=f;
-        this.setTitle("Sortie de l'eau polluée");   //("Att\u00e9rissage sur Mars");
+        this.setTitle("Sortie de l'eau polluée");  
 		this.setSize(500,500);
 		this.setLocation(650,245);
 		this.setResizable(false);

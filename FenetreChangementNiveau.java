@@ -6,7 +6,7 @@ import java.io.*; //image
 /**
  * \class FenetreChangementNiveau : fenêtre gérant l'introduction d'un niveau par une animation
  */
-public class FenetreChangementNiveau extends JFrame implements ActionListener{
+public class FenetreChangementNiveau extends JFrame {  //implements action listener
 		
 	//<!fenêtre principale de jeu
 	private FenetreJeu fenetre;
@@ -40,14 +40,14 @@ public class FenetreChangementNiveau extends JFrame implements ActionListener{
 		
 		//initialisation + placement des éléments de la fenêtre de défaite
 		niveau =f.numNiveau;
-        mt = new Timer(1,this);
+        // mt = new Timer(1,this);
         
-        x = 0;
+        x = 325;
         
 		//ajout des éléments + affichage de la fenêtre de défaite
 		this.setVisible(true);
 		
-		mt.start();
+		// mt.start();
 		
     }
     
@@ -63,28 +63,29 @@ public class FenetreChangementNiveau extends JFrame implements ActionListener{
 		g.setFont(new Font("Agency FB",Font.BOLD,120));
 		g.drawString("Niveau "+niveau,x,300);
 	}
-    
-    /**
-   * \fn void actionPerformed(ActionEvent e) : méthode permettant de gérer la partie graphique de compter le temps grâce au timer, de modifier l'abscisse du texte en conséquence afin de le faire bouger
-   * 
-   * @param ActionEvent e : événement associé
-   */ 
-    public void actionPerformed(ActionEvent e){
-		if(isShowing()){
-			if(x<=1000){ //gestion de la translation du String affiché
-				x=x+5;
-				repaint();
-			}else{ //arrêt de la translation quand l'affichage sort de la fenêtre
-				mt.stop();
-				setVisible(false);
-				fenetre.enJeu = false;
-				fenetre.AffJeu.repaint();
-			}
-		}else{
-			mt.stop();
-			setVisible(false);
-			fenetre.enJeu = false;
-			fenetre.AffJeu.repaint();
-		}
-	}
 }
+    
+//     /**
+//    * \fn void actionPerformed(ActionEvent e) : méthode permettant de gérer la partie graphique de compter le temps grâce au timer, de modifier l'abscisse du texte en conséquence afin de le faire bouger
+//    * 
+//    * @param ActionEvent e : événement associé
+//    */ 
+//     public void actionPerformed(ActionEvent e){
+// 		if(isShowing()){
+// 			if(x<=1000){ //gestion de la translation du String affiché
+// 				x=x+5;
+// 				repaint();
+// 			}else{ //arrêt de la translation quand l'affichage sort de la fenêtre
+// 				mt.stop();
+// 				setVisible(false);
+// 				fenetre.enJeu = false;
+// 				fenetre.AffJeu.repaint();
+// 			}
+// 		}else{
+// 			mt.stop();
+// 			setVisible(false);
+// 			fenetre.enJeu = false;
+// 			fenetre.AffJeu.repaint();
+// 		}
+// 	}
+// }

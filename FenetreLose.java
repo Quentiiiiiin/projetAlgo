@@ -59,7 +59,7 @@ public class FenetreLose extends JFrame implements ActionListener{
 			
 		//ajout des éléments + affichage de la fenêtre de défaite
 		
-		Phrase.setText("T'as tué Nemo super sympa de ta part");
+		Phrase.setText("Tu as tué ton poisson");
 		Fond.setBackground(new Color(236,134,131));
 		Gif.setIcon(new ImageIcon("GIF POISSON QUI REMONTE A LA SURFACE"));  //image
 		Fond.add(Phrase);
