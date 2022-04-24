@@ -61,7 +61,7 @@ public class FenetreLose extends JFrame implements ActionListener{
 		
 		Phrase.setText("Tu as tué ton poisson");
 		Fond.setBackground(new Color(236,134,131));
-		Gif.setIcon(new ImageIcon("GIF POISSON QUI REMONTE A LA SURFACE"));  //image
+		Gif.setIcon(new ImageIcon("images/poissonmort.gif"));  //image
 		Fond.add(Phrase);
 		Fond.add(Restart);
 		Fond.add(Gif);
