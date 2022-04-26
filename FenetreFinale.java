@@ -38,22 +38,22 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
         JPanel Fond = new JPanel();
         Fond.setLayout(null);
         Fond.setBounds(0,0,1000,1000);
-        Fond.setBackground(new Color(0,127,255));
+        Fond.setBackground(new Color(29,215,238));
         
         JLabel Gif = new JLabel();
         Gif.setBounds(0,0,1000,1000);
         Gif.setBackground(new Color(0,0,162)); 
         Fond.add(Gif);
         
-        JLabel I1 = new JLabel(new ImageIcon("images/Nemo.jpg"));
+        JLabel I1 = new JLabel(new ImageIcon("images/finHeureuse.png"));
         I1.setBounds(40,40,640,510);
         Gif.add(I1);
         
         
         Info = new JLabel("+ D'INFOS");
         Info.setBounds(700,520,150,50);
-        Info.setBackground(new Color(0,127,255));  
-        Info.setForeground(new Color(206,206,206));  
+        Info.setBackground(new Color(255,0,0));  
+        Info.setForeground(new Color(255,224,193));  
         Info.setFont(new Font("Agency FB",Font.BOLD,35));
         Info.addMouseListener(this);
         Gif.add(Info);
@@ -61,14 +61,14 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
         Restart = new JButton("Restart");
         Restart.setBounds(730,30,200,75);
         Restart.setFont(new Font("Agency FB",Font.BOLD,35));
-        Restart.setForeground(new Color(0,127,255)); 
-        Restart.setBackground(new Color(206,206,206)); 
+        Restart.setForeground(new Color(255,0,0)); 
+        Restart.setBackground(new Color(255,224,193)); 
         Gif.add(Restart);
        
         String T = readFile("texte/description.txt");
         JTextArea Texte = new JTextArea(T);
-        Texte.setBackground(new Color(206,206,206)); 
-        Texte.setForeground(new Color(0,127,255));  
+        Texte.setBackground(new Color(255,0,0)); 
+        Texte.setForeground(new Color(255,224,193));  
         Texte.setBounds(45,610,900,330);
         Texte.setFont(new Font("Agency FB",Font.BOLD,30));
         Texte.setEditable(false);
