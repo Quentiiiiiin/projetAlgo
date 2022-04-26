@@ -54,13 +54,13 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
         Info.setBounds(700,520,150,50);
         Info.setBackground(new Color(255,0,0));  
         Info.setForeground(new Color(255,224,193));  
-        Info.setFont(new Font("Agency FB",Font.BOLD,35));
+        Info.setFont(new Font("Juice ITC",Font.BOLD,35));
         Info.addMouseListener(this);
         Gif.add(Info);
         
         Restart = new JButton("Restart");
         Restart.setBounds(730,30,200,75);
-        Restart.setFont(new Font("Agency FB",Font.BOLD,35));
+        Restart.setFont(new Font("Juice ITC",Font.BOLD,35));
         Restart.setForeground(new Color(255,0,0)); 
         Restart.setBackground(new Color(255,224,193)); 
         Gif.add(Restart);
@@ -70,7 +70,7 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
         Texte.setBackground(new Color(255,0,0)); 
         Texte.setForeground(new Color(255,224,193));  
         Texte.setBounds(45,610,900,330);
-        Texte.setFont(new Font("Agency FB",Font.BOLD,30));
+        Texte.setFont(new Font("Juice ITC",Font.BOLD,30));
         Texte.setEditable(false);
         Gif.add(Texte);
         

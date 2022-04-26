@@ -60,7 +60,7 @@ public class FenetreChangementNiveau extends JFrame implements ActionListener{  
 		g.setColor(new Color(255,0,0));
 		g.fillRect(0,0,getWidth(),getHeight());
 		g.setColor(Color.WHITE);
-		g.setFont(new Font("Agency FB",Font.BOLD,120));
+		g.setFont(new Font("Curlz MT",Font.BOLD,120));
 		g.drawString("Niveau "+niveau,x,300);
 	}
 

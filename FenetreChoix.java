@@ -75,15 +75,15 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         
         JLabel Titre = new JLabel ("SELECTION DU POISSON EN DANGER:");
         Titre.setLayout(null);
-        Titre.setBounds(10,0,400,100);
-        Titre.setFont(new Font("Agency FB",Font.BOLD,25));
-        Titre.setForeground(new Color(255,0,0));
+        Titre.setBounds(10,0,500,100);
+        Titre.setFont(new Font("Juice ITC",Font.BOLD,25));
+        Titre.setForeground(new Color(255,128,0));
         Fond.add(Titre);
         
         JLabel NomJeu = new JLabel ("NEMO");
         NomJeu.setLayout(null);
         NomJeu.setBounds(730,10,270,100);
-        NomJeu.setFont(new Font("Agency FB",Font.BOLD,45));
+        NomJeu.setFont(new Font("Juice ITC",Font.BOLD,45));
         NomJeu.setForeground(new Color(206,206,206));
         Fond.add(NomJeu);
        
@@ -112,7 +112,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
 		Floflo.setBounds(100,305,200,50);
 		Floflo.setBackground(new Color(219,190,242));
         Floflo.addActionListener(this); 
-        Floflo.setFont(new Font("Agency FB",Font.BOLD,25));
+        Floflo.setFont(new Font("Juice ITC",Font.BOLD,25));
         Fond.add(Floflo);
         
         Loulou = new JButton("Jacques");
@@ -120,14 +120,14 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
 		Loulou.setBounds(400,305,200,50);
 		Loulou.setBackground(new Color(242,190,214));
         Loulou.addActionListener(this);
-        Loulou.setFont(new Font("Agency FB",Font.BOLD,25)); 
+        Loulou.setFont(new Font("Juice ITC",Font.BOLD,25)); 
         Fond.add(Loulou);
         
         Qq= new JButton("Monsieur Rai");
 		Qq.setLayout(null);
 		Qq.setBounds(400,605,200,50);
 		Qq.setBackground(new Color(251,236,225));
-		Qq.setFont(new Font("Agency FB",Font.BOLD,25));
+		Qq.setFont(new Font("Juice ITC",Font.BOLD,25));
         Qq.addActionListener(this); 
         Fond.add(Qq);
         
@@ -136,7 +136,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
 		Teqteq.setBounds(100,605,200,50);
 		Teqteq.setBackground(new Color(180,207,250));
         Teqteq.addActionListener(this);
-        Teqteq.setFont(new Font("Agency FB",Font.BOLD,25)); 
+        Teqteq.setFont(new Font("Juice ITC",Font.BOLD,25)); 
         Fond.add(Teqteq);
         
         Dodo = new JButton("Dory");
@@ -144,7 +144,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
 		Dodo.setBounds(250,905,200,50);
 	    Dodo.setBackground(new Color(247,198,197));
         Dodo.addActionListener(this); 
-        Dodo.setFont(new Font("Agency FB",Font.BOLD,25));
+        Dodo.setFont(new Font("Juice ITC",Font.BOLD,25));
         Fond.add(Dodo);
         
         Choisir = new JButton("CHOISIR");
@@ -153,15 +153,15 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
 		Choisir.setBackground(new Color(206,206,206));
 		Choisir.setForeground(new Color(255,0,0));
         Choisir.addActionListener(this); 
-        Choisir.setFont(new Font("Agency FB",Font.BOLD,35));
+        Choisir.setFont(new Font("Juice ITC",Font.BOLD,35));
         Fond.add(Choisir);
         
         Texte = new JTextArea();
         Texte.setEditable(false);
         Texte.setLayout(null);
-        Texte.setBackground(new Color(255,0,0));
-        Texte.setForeground(new Color(206,206,206));
-        Texte.setFont(new Font("Agency FB",Font.BOLD,25));
+        Texte.setBackground(new Color(255,128,0));
+        Texte.setForeground(new Color(0,0,0));
+        Texte.setFont(new Font("Juice ITC",Font.BOLD,25));
         Texte.setBounds(725,300,300,400);
         Fond.add(Texte);
         

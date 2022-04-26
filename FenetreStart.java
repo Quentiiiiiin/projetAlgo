@@ -28,43 +28,43 @@ public class FenetreStart extends JFrame implements ActionListener{
 		//création des éléments de la page d'accueil
 		
 		start1= new JButton("START");
-		start1.setBounds(450,830,300,100);
+		start1.setBounds(450,880,300,60);
 		start1.setBackground(new Color(206,206,206));
-		start1.setFont(new Font("Agency FB",Font.BOLD,50));
-		start1.setForeground(new Color(255,0,0));  
+		start1.setFont(new Font("Juice ITC",Font.BOLD,50));
+		start1.setForeground(new Color(255,128,0));  
 		start1.addActionListener(this);
 		
 		JLabel ombre = new JLabel();
 		ombre.setLayout(null);
-		ombre.setSize(1200,200);
-		ombre.setLocation(106,0);
-		ombre.setText("Le Jeu Nemo");
-		ombre.setFont(new Font("Agency FB",Font.BOLD,180));
+		ombre.setSize(1200,150);
+		ombre.setLocation(246,0);
+		ombre.setText("Nemo : Le Jeu");
+		ombre.setFont(new Font("Juice ITC",Font.BOLD,140));
 		ombre.setForeground(Color.black);
 		ombre.setBackground(new Color(0,0,255));  
 		
 		JLabel txt = new JLabel();
 		txt.setLayout(null);
-		txt.setSize(1200,200);
-		txt.setLocation(100,0);
-		txt.setText("Le Jeu Nemo");
-		txt.setFont(new Font("Agency FB",Font.BOLD,180));
+		txt.setSize(1200,150);
+		txt.setLocation(240,0);
+		txt.setText("Nemo : Le Jeu");
+		txt.setFont(new Font("Juice ITC",Font.BOLD,140));
 		txt.setForeground(Color.white);  
 		txt.setBackground(new Color(0,0,0)); 
 		
 		String T = readFile("texte/debut.txt");
         JTextArea Texte = new JTextArea(T);
-        Texte.setBackground(new Color(255,0,0)); 
-        Texte.setForeground(new Color(206,206,206));
-        Texte.setBounds(50,200,1200,600);
-        Texte.setFont(new Font("Agency FB",Font.BOLD,25));
+        Texte.setBackground(new Color(255,128,0)); 
+        Texte.setForeground(new Color(0,0,0));
+        Texte.setBounds(30,190,1200,700);
+        Texte.setFont(new Font("Juice ITC",Font.BOLD,23));
         Texte.setEditable(false);
              
         
         JPanel panneauGlobal = new JPanel();
 		panneauGlobal.setLayout(null);
 		panneauGlobal.setBounds(0,0,1000,1000);
-		panneauGlobal.setBackground(new Color(255,0,0)); 
+		panneauGlobal.setBackground(new Color(255,128,0)); 
 		panneauGlobal.add(start1);
 		panneauGlobal.add(txt);
 		panneauGlobal.add(Texte);

@@ -125,7 +125,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
         (int)(13.0/21.0*1000),(int)(40.0/297.0*1500),(int)(2.0/21.0*1000));
         Start.setBackground(new Color(0,213,233));
         Start.setForeground(new Color(52,62,162));
-        Start.setFont(new Font("Agency FB",Font.BOLD,60));
+        Start.setFont(new Font("Juice ITC",Font.BOLD,60));
         
         Restart = new JButton("REJOUER");
         Restart.setLayout(null);
@@ -133,7 +133,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
         (int)(10/21.0*1000),(int)(40.0/297.0*1500),(int)(2.0/21.0*1000));
         Restart.setForeground(new Color(52,62,162));
         Restart.setBackground(new Color(0,213,233));
-        Restart.setFont(new Font("Agency FB",Font.BOLD,40));
+        Restart.setFont(new Font("Juice ITC",Font.BOLD,40));
         
                 
         Titre = new JLabel("Nemo | Niveau "+ numNiveau);
@@ -141,7 +141,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
         Titre.setBounds((int)(60.0/99.0*1500),
         (int)(1.5/105.0*1000),(int)(800.0/297.0*1500),(int)(13.0/210.0*1000));
         Titre.setForeground(new Color(255,227,208));
-        Titre.setFont(new Font("Agency FB",Font.BOLD,65));
+        Titre.setFont(new Font("Juice ITC",Font.BOLD,65));
               
         Vitesse = new JSlider(0,20,10);
         vI=Vitesse.getValue();
@@ -159,7 +159,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
         VitesseI.setBounds((int)(5.0/99.0*1500),
         (int)(2.5/21.0*1000)+20,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
         VitesseI.setForeground(new Color(255,227,208));
-        VitesseI.setFont(new Font("Agency FB",Font.BOLD, 19));
+        VitesseI.setFont(new Font("Juice ITC",Font.BOLD, 19));
                
         Angle = new JSlider(-90,90,0);
         aI=Angle.getValue();
@@ -178,22 +178,22 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
         AngleI.setBounds((int)(5.0/99.0*1500),
         (int)(6.0/21.0*1000),(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
         AngleI.setForeground(new Color(255,227,208));
-        AngleI.setFont(new Font("Agency FB",Font.BOLD, 19));
+        AngleI.setFont(new Font("Juice ITC",Font.BOLD, 19));
         
                 
         CourantX = new JLabel();
         CourantX.setLayout(null);
         CourantX.setBounds((int)(5.0/99.0*1500),
-        (int)(0.50/21.0*1000)+40,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
+        (int)(0.50/21.0*1000)+40,(int)(50.0/297.0*1500),(int)(1.5/21.0*1000));
         CourantX.setForeground(new Color(255,227,208));
-        CourantX.setFont(new Font("Agency FB",Font.BOLD,35));
+        CourantX.setFont(new Font("Juice ITC",Font.BOLD,35));
 
 		CourantY = new JLabel();
         CourantY.setLayout(null);
         CourantY.setBounds((int)(5.0/99.0*1500),
-        (int)(0.50/21.0*1000)+5,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
+        (int)(0.50/21.0*1000)+5,(int)(50.0/297.0*1500),(int)(1.5/21.0*1000));
         CourantY.setForeground(new Color(255,227,208));
-        CourantY.setFont(new Font("Agency FB",Font.BOLD,35));
+        CourantY.setFont(new Font("Juice ITC",Font.BOLD,35));
 
 
         Viscosite = new JLabel();
@@ -201,14 +201,14 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
         Viscosite.setBounds((int)(5.0/99.0*1500),
         (int)(0.50/21.0*1000)-30,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
         Viscosite.setForeground(new Color(255,227,208));
-        Viscosite.setFont(new Font("Agency FB",Font.BOLD,35));
+        Viscosite.setFont(new Font("Juice ITC",Font.BOLD,35));
                
         Nourri = new JLabel("Nourriture : "+(int)(pNourriture)+"%");
         Nourri.setLayout(null);
         Nourri.setBounds((int)(5.0/99.0*1500),
         (int)(16.0/21.0*1000),(int)(50.0/297.0*1500),(int)(1.5/21.0*1000));
         Nourri.setForeground(new Color(0,213,233));
-        Nourri.setFont(new Font("Agency FB",Font.BOLD,35));
+        Nourri.setFont(new Font("Juice ITC",Font.BOLD,35));
 	
 		currentNourriture = new JProgressBar(0,100);
 		currentNourriture.setBounds((int)(5.0/99.0*1500),
@@ -236,7 +236,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		Aide = new JButton("Aide");
 		Aide.setSize(200,50);
 		Aide.setLocation(350,20);
-		Aide.setFont(new Font("Agency FB",Font.BOLD,35));
+		Aide.setFont(new Font("Juice ITC",Font.BOLD,35));
 		Aide.setBackground(new Color(255,0,0));
 		Aide.setForeground(new Color(255,227,208));
 		
