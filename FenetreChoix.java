@@ -107,7 +107,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         E.setBounds(250,690,200,200);
         Fond.add(E);
         
-        Floflo = new JButton("Florent");
+        Floflo = new JButton("Nemo");
 		Floflo.setLayout(null);
 		Floflo.setBounds(100,305,200,50);
 		Floflo.setBackground(new Color(219,190,242));
@@ -115,7 +115,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         Floflo.setFont(new Font("Agency FB",Font.BOLD,25));
         Fond.add(Floflo);
         
-        Loulou = new JButton("Louis");
+        Loulou = new JButton("Jacques");
 		Loulou.setLayout(null);
 		Loulou.setBounds(400,305,200,50);
 		Loulou.setBackground(new Color(242,190,214));
@@ -123,7 +123,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         Loulou.setFont(new Font("Agency FB",Font.BOLD,25)); 
         Fond.add(Loulou);
         
-        Qq= new JButton("Quentin");
+        Qq= new JButton("Monsieur Rai");
 		Qq.setLayout(null);
 		Qq.setBounds(400,605,200,50);
 		Qq.setBackground(new Color(251,236,225));
@@ -131,7 +131,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         Qq.addActionListener(this); 
         Fond.add(Qq);
         
-        Teqteq = new JButton("Tequel");
+        Teqteq = new JButton("Deb");
 		Teqteq.setLayout(null);
 		Teqteq.setBounds(100,605,200,50);
 		Teqteq.setBackground(new Color(180,207,250));
@@ -174,10 +174,10 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         
 		//initialisation des poissons
         
-        Florent = new Poisson(ImageIO.read(new File("images/nemo.png")),"texte/Florent.txt");
-        Louis = new Poisson(ImageIO.read(new File("images/crab.png")),"texte/Louis.txt");
-        Quentin = new Poisson(ImageIO.read(new File("images/rai.png")),"texte/Quentin.txt");
-        Tequel = new Poisson(ImageIO.read(new File("images/deb.png")),"texte/Tequel.txt");
+        Florent = new Poisson(ImageIO.read(new File("images/nemo.png")),"texte/Nemo.txt");
+        Louis = new Poisson(ImageIO.read(new File("images/crab.png")),"texte/Jacques.txt");
+        Quentin = new Poisson(ImageIO.read(new File("images/rai.png")),"texte/MonsieurRai.txt");
+        Tequel = new Poisson(ImageIO.read(new File("images/deb.png")),"texte/Deb.txt");
         Dory = new Poisson(ImageIO.read(new File("images/dory.png")),"texte/Dory.txt");
               
         this.setVisible(true);

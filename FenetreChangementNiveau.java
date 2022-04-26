@@ -6,7 +6,7 @@ import java.io.*; //image
 /**
  * \class FenetreChangementNiveau : fenêtre gérant l'introduction d'un niveau par une animation
  */
-public class FenetreChangementNiveau extends JFrame implements ActionListener{  //implements action listener
+public class FenetreChangementNiveau extends JFrame implements ActionListener{  //implements action listener implements ActionListener
 		
 	//<!fenêtre principale de jeu
 	private FenetreJeu fenetre;
@@ -63,6 +63,7 @@ public class FenetreChangementNiveau extends JFrame implements ActionListener{  
 		g.setFont(new Font("Agency FB",Font.BOLD,120));
 		g.drawString("Niveau "+niveau,x,300);
 	}
+
     
     /**
    * \fn void actionPerformed(ActionEvent e) : méthode permettant de gérer la partie graphique de compter le temps grâce au timer, de modifier l'abscisse du texte en conséquence afin de le faire bouger
