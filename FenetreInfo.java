@@ -14,7 +14,7 @@ public class FenetreInfo extends JFrame{
 		
 		//initialisation de la fenêtre
 		
-		this.setTitle("Localisation des endroits les plus pollués du monde");
+		this.setTitle("Localisation de 5 décharges polluantes dans les océans");
 		this.setSize(1000,830);
 		this.setLocation(400,20);
 		this.setResizable(false);

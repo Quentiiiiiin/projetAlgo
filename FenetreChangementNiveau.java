@@ -17,7 +17,7 @@ public class FenetreChangementNiveau extends JFrame implements ActionListener{  
 	//<!numéro du niveau en cours
 	private int niveau;
 		
-	//<!timer permettant de faire bouger l'affichage
+	//<!timer permettant de relancer le niveau correctement 
 	private Timer mt;
 		
 	
@@ -57,9 +57,9 @@ public class FenetreChangementNiveau extends JFrame implements ActionListener{  
    * @param Graphics g : objet graphique d'affichage
    */ 
     public void paint(Graphics g){
-		g.setColor(new Color(52,62,162));
+		g.setColor(new Color(255,0,0));
 		g.fillRect(0,0,getWidth(),getHeight());
-		g.setColor(new Color(249,200,93));
+		g.setColor(Color.WHITE);
 		g.setFont(new Font("Agency FB",Font.BOLD,120));
 		g.drawString("Niveau "+niveau,x,300);
 	}
@@ -72,20 +72,10 @@ public class FenetreChangementNiveau extends JFrame implements ActionListener{  
    */ 
     public void actionPerformed(ActionEvent e){
 		if(isShowing()){
-			if(x<=1000){ //gestion de la translation du String affiché
-				x=x+5;
-				repaint();
-			}else{ //arrêt de la translation quand l'affichage sort de la fenêtre
-				mt.stop();
-				setVisible(false);
+			if(x<=1000){ // Une condition à tout prix vérifiée
 				fenetre.enJeu = false;
 				fenetre.AffJeu.repaint();
 			}
-		}else{
-			mt.stop();
-			setVisible(false);
-			fenetre.enJeu = false;
-			fenetre.AffJeu.repaint();
 		}
 	}
 }
