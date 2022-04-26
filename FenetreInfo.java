@@ -27,7 +27,7 @@ public class FenetreInfo extends JFrame{
         Fond.setBackground(Color.black);
         this.add(Fond);
         
-        JLabel Image = new JLabel(new ImageIcon("IMAGE LOCALISANT TOUT CA"));
+        JLabel Image = new JLabel(new ImageIcon("images/pollution.jpg"));
         Image.setBounds(0,0,1000,809);
         Fond.add(Image);
         this.setVisible(true);

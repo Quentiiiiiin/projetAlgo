@@ -28,10 +28,10 @@ public class FenetreStart extends JFrame implements ActionListener{
 		//création des éléments de la page d'accueil
 		
 		start1= new JButton("START");
-		start1.setBounds(450,800,300,100);
+		start1.setBounds(450,830,300,100);
 		start1.setBackground(new Color(206,206,206));
 		start1.setFont(new Font("Agency FB",Font.BOLD,50));
-		start1.setForeground(new Color(0,0,255));  
+		start1.setForeground(new Color(255,0,0));  
 		start1.addActionListener(this);
 		
 		JLabel ombre = new JLabel();
@@ -49,12 +49,12 @@ public class FenetreStart extends JFrame implements ActionListener{
 		txt.setLocation(100,0);
 		txt.setText("Le Jeu Nemo");
 		txt.setFont(new Font("Agency FB",Font.BOLD,180));
-		txt.setForeground(new Color(0,0,255));  
+		txt.setForeground(Color.white);  
 		txt.setBackground(new Color(0,0,0)); 
 		
 		String T = readFile("texte/debut.txt");
         JTextArea Texte = new JTextArea(T);
-        Texte.setBackground(new Color(0,127,255)); 
+        Texte.setBackground(new Color(255,0,0)); 
         Texte.setForeground(new Color(206,206,206));
         Texte.setBounds(50,200,1200,600);
         Texte.setFont(new Font("Agency FB",Font.BOLD,25));
@@ -64,7 +64,7 @@ public class FenetreStart extends JFrame implements ActionListener{
         JPanel panneauGlobal = new JPanel();
 		panneauGlobal.setLayout(null);
 		panneauGlobal.setBounds(0,0,1000,1000);
-		panneauGlobal.setBackground(new Color(0,127,255)); 
+		panneauGlobal.setBackground(new Color(255,0,0)); 
 		panneauGlobal.add(start1);
 		panneauGlobal.add(txt);
 		panneauGlobal.add(Texte);

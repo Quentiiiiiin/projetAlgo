@@ -119,20 +119,20 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		
 		//Initialisation et placement de tous les composants statiques
 		
-		Start = new JButton("LAUNCH");
+		Start = new JButton("LANCER");
         Start.setLayout(null);
         Start.setBounds((int)(5.0/99.0*1500),
         (int)(13.0/21.0*1000),(int)(40.0/297.0*1500),(int)(2.0/21.0*1000));
-        Start.setBackground(new Color(242,121,121));
+        Start.setBackground(new Color(0,213,233));
         Start.setForeground(new Color(52,62,162));
         Start.setFont(new Font("Agency FB",Font.BOLD,60));
         
-        Restart = new JButton("RESTART");
+        Restart = new JButton("REJOUER");
         Restart.setLayout(null);
         Restart.setBounds((int)(5.0/99.0*1500),
         (int)(10/21.0*1000),(int)(40.0/297.0*1500),(int)(2.0/21.0*1000));
         Restart.setForeground(new Color(52,62,162));
-        Restart.setBackground(new Color(249,200,93));
+        Restart.setBackground(new Color(0,213,233));
         Restart.setFont(new Font("Agency FB",Font.BOLD,40));
         
                 
@@ -140,25 +140,25 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
         Titre.setLayout(null);
         Titre.setBounds((int)(60.0/99.0*1500),
         (int)(1.5/105.0*1000),(int)(800.0/297.0*1500),(int)(13.0/210.0*1000));
-        Titre.setForeground(new Color(249,200,93));
+        Titre.setForeground(new Color(255,227,208));
         Titre.setFont(new Font("Agency FB",Font.BOLD,65));
               
         Vitesse = new JSlider(0,20,10);
         vI=Vitesse.getValue();
         Vitesse.setLayout(null);
         Vitesse.setBounds((int)(5.0/99.0*1500),
-        (int)(3.5/21.0*1000),(int)(40.0/297.0*1500),(int)(2.0/21.0*1000));
+        (int)(3.5/21.0*1000)+20,(int)(40.0/297.0*1500),(int)(2.0/21.0*1000));
         Vitesse.setMajorTickSpacing(5);
         Vitesse.setPaintTicks(true);
         Vitesse.setPaintLabels(true);
-        Vitesse.setBackground(new Color(52,62,162));
-        Vitesse.setForeground(new Color(249,200,93));
+        Vitesse.setBackground(new Color(255,0,0));
+        Vitesse.setForeground(new Color(255,227,208));
                 
         VitesseI = new JLabel("Vitesse initiale : "+vI+" km/h");
         VitesseI.setLayout(null);
         VitesseI.setBounds((int)(5.0/99.0*1500),
-        (int)(2.5/21.0*1000),(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
-        VitesseI.setForeground(new Color(249,200,93));
+        (int)(2.5/21.0*1000)+20,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
+        VitesseI.setForeground(new Color(255,227,208));
         VitesseI.setFont(new Font("Agency FB",Font.BOLD, 19));
                
         Angle = new JSlider(-90,90,0);
@@ -169,45 +169,45 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
         Angle.setMajorTickSpacing(45);
         Angle.setPaintTicks(true);
         Angle.setPaintLabels(true);
-        Angle.setBackground(new Color(52,62,162));
-        Angle.setForeground(new Color(249,200,93));
+        Angle.setBackground(new Color(255,0,0));
+        Angle.setForeground(new Color(255,227,208));
                 
                 
         AngleI = new JLabel("Angle initial : "+aI+" \u00b0");
         AngleI.setLayout(null);
         AngleI.setBounds((int)(5.0/99.0*1500),
         (int)(6.0/21.0*1000),(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
-        AngleI.setForeground(new Color(249,200,93));
+        AngleI.setForeground(new Color(255,227,208));
         AngleI.setFont(new Font("Agency FB",Font.BOLD, 19));
         
                 
         CourantX = new JLabel();
         CourantX.setLayout(null);
         CourantX.setBounds((int)(5.0/99.0*1500),
-        (int)(0.50/21.0*1000)+20,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
-        CourantX.setForeground(new Color(249,200,93));
+        (int)(0.50/21.0*1000)+40,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
+        CourantX.setForeground(new Color(255,227,208));
         CourantX.setFont(new Font("Agency FB",Font.BOLD,35));
 
 		CourantY = new JLabel();
         CourantY.setLayout(null);
         CourantY.setBounds((int)(5.0/99.0*1500),
-        (int)(0.50/21.0*1000)-20,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
-        CourantY.setForeground(new Color(249,200,93));
+        (int)(0.50/21.0*1000)+5,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
+        CourantY.setForeground(new Color(255,227,208));
         CourantY.setFont(new Font("Agency FB",Font.BOLD,35));
 
 
         Viscosite = new JLabel();
         Viscosite.setLayout(null);
         Viscosite.setBounds((int)(5.0/99.0*1500),
-        (int)(0.50/21.0*1000)-60,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
-        Viscosite.setForeground(new Color(249,200,93));
+        (int)(0.50/21.0*1000)-30,(int)(40.0/297.0*1500),(int)(1.5/21.0*1000));
+        Viscosite.setForeground(new Color(255,227,208));
         Viscosite.setFont(new Font("Agency FB",Font.BOLD,35));
                
         Nourri = new JLabel("Nourriture : "+(int)(pNourriture)+"%");
         Nourri.setLayout(null);
         Nourri.setBounds((int)(5.0/99.0*1500),
         (int)(16.0/21.0*1000),(int)(50.0/297.0*1500),(int)(1.5/21.0*1000));
-        Nourri.setForeground(new Color(249,200,93));
+        Nourri.setForeground(new Color(0,213,233));
         Nourri.setFont(new Font("Agency FB",Font.BOLD,35));
 	
 		currentNourriture = new JProgressBar(0,100);
@@ -215,7 +215,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		(int)(18.0/21.0*1000),(int)(40.0/297.0*1500),(int)(0.75/21.0*1000));
 		currentNourriture.setBorderPainted(true);
 		currentNourriture.setValue((int)(pNourriture));
-		currentNourriture.setForeground(new Color(249,200,93));
+		currentNourriture.setForeground(new Color(0,213,233));
 		
 		largeurJeu = (int)(20.0/27.0*1500);
 		hauteurJeu = (int)(5.0/6.0*1000);
@@ -223,7 +223,7 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		Contour = new JPanel();
 		Contour.setLayout(null);
 		Contour.setBounds((int)(70.0/297.0*1500)-10,(int)(2.0/21.0*1000)-10,(int)(20.0/27.0*1500)+20,(int)(5.0/6.0*1000)+20);
-		Contour.setBackground(new Color(249,200,93));
+		Contour.setBackground(new Color(0,134,157));
 		
 		//Initialisation et placement initial des composants graphiques
 		Nemo = r;
@@ -237,14 +237,14 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		Aide.setSize(200,50);
 		Aide.setLocation(350,20);
 		Aide.setFont(new Font("Agency FB",Font.BOLD,35));
-		Aide.setBackground(new Color(52,62,162));
-		Aide.setForeground(Color.white);
+		Aide.setBackground(new Color(255,0,0));
+		Aide.setForeground(new Color(255,227,208));
 		
 		
 		//ajout de tous ces composants au JPanel principal		
 		
 		JPanel panneauGlobal = new JPanel();
-		panneauGlobal.setBackground(new Color(52,62,162));
+		panneauGlobal.setBackground(new Color(255,0,0));
 		panneauGlobal.setLayout(null);
 		panneauGlobal.add(Start);
 		panneauGlobal.add(Restart);
