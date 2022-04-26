@@ -9,8 +9,7 @@ import java.io.*; //image
 public class FenetreFinale extends JFrame implements MouseListener, ActionListener{
 	
 	//fenêtre principale de jeu
-
-	//private FenetreJeu fenetre;
+    private FenetreJeu fenetre;
 	
 	//zone où seront affichées les infos sur les poissons
 	private JLabel Info;
@@ -27,7 +26,7 @@ public class FenetreFinale extends JFrame implements MouseListener, ActionListen
 				
 		//initialisation de la fenêtre
 		
-		//fenetre=f;
+		fenetre=f;
         this.setTitle("Le poisson est sauvé");
 		this.setSize(1000,1000);
 		this.setLocation(400,20);
