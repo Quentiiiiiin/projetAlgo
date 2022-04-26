@@ -14,7 +14,7 @@ public class RequinAnimation extends JFrame implements ActionListener{
     private FenetreJeu fenetre;
     
     //<!image du fond de la fenêtre
-    private BufferedImage fond;
+    // private BufferedImage fond;
     
     //<!image de l'attaque
     private BufferedImage Attaque;
@@ -52,7 +52,7 @@ public class RequinAnimation extends JFrame implements ActionListener{
         //initialisation des composants
         
         Attaque = ImageIO.read(new File("images/attaqueRequin.png"));
-        fond = ImageIO.read(new File("images/REQUIN2RUE.png"));
+        //fond = ImageIO.read(new File("images/REQUIN2RUE.png"));
         this.setVisible(true);
     }
     

@@ -299,31 +299,37 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
 		if(i==1){
 			viscosite = 2.0;
 			cX =(int) (Math.random()*10-5);
-			while (cY == 0){
+			cY =(int) (Math.random()*10-5);
+			if (cY == 0){						// Si le courant en Y est nul, on retente une fois, sinon il reste nul
 				cY =(int) (Math.random()*10-5);
 			}
+			
 		}else if(i==2){
 			viscosite = 2.25;
 			cX =(int) (Math.random()*10-5);
-			while (cY == 0){
+			cY =(int) (Math.random()*10-5);
+			if (cY == 0){						// Si le courant en Y est nul, on retente une fois, sinon il reste nul
 				cY =(int) (Math.random()*10-5);
 			}
 		}else if(i==3){
 			viscosite = 2.75;
 			cX =(int) (Math.random()*10-5);
-			while (cY == 0){
+			cY =(int) (Math.random()*10-5);
+			if (cY == 0){						// Si le courant en Y est nul, on retente une fois, sinon il reste nul
 				cY =(int) (Math.random()*10-5);
 			}
 		}else if(i==4){
 			viscosite = 3.0;
 			cX =(int) (Math.random()*10-5);
-			while (cY == 0){
+			cY =(int) (Math.random()*10-5);
+			if (cY == 0){						// Si le courant en Y est nul, on retente une fois, sinon il reste nul
 				cY =(int) (Math.random()*10-5);
 			}
 		}else if(i==5){
 			viscosite= 3.25;
 			cX =(int) (Math.random()*10-5);
-			while (cY == 0){
+			cY =(int) (Math.random()*10-5);
+			if (cY == 0){						// Si le courant en Y est nul, on retente une fois, sinon il reste nul
 				cY =(int) (Math.random()*10-5);
 			}
 		}

@@ -1,0 +1,5 @@
+Objectif : sortir de l'eau polluée
+Objets :
+ - requin : -15% de nouriture + niveau perdu
+ - nourriture : augemente entre 15% et 45%
+ le niveau de nourriture en fonction du repas
