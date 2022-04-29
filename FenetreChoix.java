@@ -151,7 +151,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
 		Choisir.setLayout(null);
 		Choisir.setBounds(725,800,250,100);
 		Choisir.setBackground(new Color(206,206,206));
-		Choisir.setForeground(new Color(255,0,0));
+		Choisir.setForeground(new Color(255,128,0));
         Choisir.addActionListener(this); 
         Choisir.setFont(new Font("Juice ITC",Font.BOLD,35));
         Fond.add(Choisir);
@@ -168,7 +168,7 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         Fond2 = new JPanel();
         Fond2.setLayout(null);
         Fond2.setBounds(700,0,300,1000);
-        Fond2.setBackground(new Color(255,0,0));
+        Fond2.setBackground(new Color(255,128,0));
         Fond.add(Fond2);
 
         
