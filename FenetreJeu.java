@@ -517,11 +517,9 @@ public class FenetreJeu extends JFrame implements ActionListener, ChangeListener
    */
 	public void WinOrLose(){
 		if(numNiveau==6){//si l'utilisateur a réussi le niveau 5, il a gagné
-			try{
-				new FenetreWin(this); //création de la fenêtre de victoire
+				new FenetreFinale(this); //création de la fenêtre de victoire
 				setVisible(false);
-			}catch(IOException Exception){
-			}
+			
 				
 		}else if((int)(pNourriture)<=0){ //si l'utilisateur n'a plus de nourriture, il a perdu
 			try{

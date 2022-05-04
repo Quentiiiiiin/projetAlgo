@@ -45,7 +45,7 @@ public class AffichageJeu extends JPanel{
 	public AffichageJeu(FenetreJeu f) throws IOException{
 		
 		this.f=f;
-		fondMarin= ImageIO.read(new File("images/eauPolluée.jpg")); //l'image de fond ne peut pas être créée dans la méthode paint (trop de ralentissement créé par la boucle try catch
+		fondMarin= ImageIO.read(new File("images/eauPolluee.jpg")); //l'image de fond ne peut pas être créée dans la méthode paint (trop de ralentissement créé par la boucle try catch
 		eauPropre = ImageIO.read(new File("images/eauPropre.png")); // Image de l'eau propre
 		
 		//initialisation des tableaux d'objets

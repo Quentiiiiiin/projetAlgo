@@ -227,12 +227,14 @@ public class FenetreChoix extends JFrame implements ActionListener{ //fenêtre d
         if(e.getSource()==Choisir){
             if(poissonChoisi!=null){ //si l'utilisateur a choisi un poisson
 				try{
-					new FenetreJeu(poissonChoisi); //création de la fenêtre principale de jeu
+					new FenetreJeu(poissonChoisi);
+					System.out.println("jgifdjg"); //création de la fenêtre principale de jeu
 					setVisible(false);
 				}catch(IOException exception){
 				}
 			}else{ //si l'utilisateur n'a choisi aucun poisson
 				JOptionPane.showMessageDialog(this,"Veuillez s\u00e9lectionner un poisson !"); //message d'erreur
+				
 			}
         }
         }

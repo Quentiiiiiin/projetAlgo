@@ -47,7 +47,7 @@ public class FenetreWin extends JFrame implements ActionListener{
 		
 		//lancement du timer
 		        
-        time = new Timer(10,this);
+        time = new Timer(1,this);
         time.start();
     
         eauPropre = ImageIO.read(new File("IMAGE EAU PROPRE "));

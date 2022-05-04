@@ -15,7 +15,7 @@ public class FenetreInfo extends JFrame{
 		//initialisation de la fenêtre
 		
 		this.setTitle("Localisation de 5 décharges polluantes dans les océans");
-		this.setSize(1000,830);
+		this.setSize(1000,530);
 		this.setLocation(400,20);
 		this.setResizable(false);
 		
@@ -23,12 +23,12 @@ public class FenetreInfo extends JFrame{
 		
 		JPanel Fond = new JPanel();
         Fond.setLayout(null);
-        Fond.setBounds(0,0,1000,809);
+        Fond.setBounds(0,0,1000,530);
         Fond.setBackground(Color.black);
         this.add(Fond);
         
         JLabel Image = new JLabel(new ImageIcon("images/pollution.jpg"));
-        Image.setBounds(0,0,1000,809);
+        Image.setBounds(0,0,1000,530);
         Fond.add(Image);
         this.setVisible(true);
         
